@@ -10,9 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@orbs-network/ton-access": "^2.3.3",
+    "@stitches/react": "^1.2.8",
+    "@tanstack/react-query": "^4.35.7",
+    "@tonconnect/ui-react": "^2.0.0-beta.2",
+    "@twa-dev/mark42": "^0.0.38",
+    "@twa-dev/sdk": "^6.9.0",
     "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "buffer": "^6.0.3",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.16.0",
+    "tailwind-merge": "^1.14.0",
+    "ton": "^13.6.1",
+    "ton-core": "^0.52.0",
+    "ton-crypto": "^3.2.0",
+    "vite-plugin-node-polyfills": "^0.15.0",
+    "vite-tsconfig-paths": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -20,9 +36,12 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
