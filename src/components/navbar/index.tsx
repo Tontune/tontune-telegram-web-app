@@ -4,21 +4,28 @@ import { twJoin } from 'tailwind-merge';
 
 import Button from 'components/button';
 
+import DropdownMenu from './components/DropdownMenu';
+
 const Navbar = () => {
   const { network } = useTonConnect();
 
   return (
     <nav
       className={twJoin(
-        'flex items-center justify-center rounded-xl transition-all',
+        'z-10 flex items-center justify-center rounded-xl transition-all',
         'w-full',
         'backdrop-blur-sm dark:bg-[#0b14374d] md:top-4 xl:top-[20px]',
       )}
     >
       <div className="relative flex h-[61px] w-full max-w-[420px] items-center justify-around gap-3 rounded-full bg-white p-2 shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none">
-        <Button extra="w-[150px] !bg-telegramButton" variant="primary">
+        <div className="relative">
+          <DropdownMenu />
+        </div>
+
+        <Button extra="w-auto !bg-telegramButton" variant="primary">
           {network ? (network === CHAIN.MAINNET ? 'mainnet' : 'testnet') : 'N/A'}
         </Button>
+
         <TonConnectButton />
       </div>
     </nav>

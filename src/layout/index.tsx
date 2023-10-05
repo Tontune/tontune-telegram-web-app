@@ -1,12 +1,16 @@
+import { Outlet } from 'react-router-dom';
+
 import FixedPlugin from 'components/fixedPlugin/FixedPlugin';
 import Navbar from 'components/navbar';
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout() {
   return (
     <div className="flex flex-col min-h-screen w-full bg-background-100 dark:bg-background-900 dark:text-white p-5">
       <Navbar />
 
-      <main className="transition-all !py-[35px] font-dm">{children}</main>
+      <main className="transition-all !py-[35px] font-dm">
+        <Outlet />
+      </main>
 
       <FixedPlugin />
     </div>
