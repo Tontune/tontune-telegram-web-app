@@ -7,8 +7,6 @@
 - [Visuals](#visuals)
 - [Getting Started](#getting-started)
 - [Support](#support)
-- [Contribution](#contribution)
-- [License](#license)
 
 ## Introduction
 Tontune is a decentralized music streaming platform powered by the TON blockchain, aiming to create a peer-to-peer bridge between artists and listeners.
@@ -28,9 +26,9 @@ Artists and listeners can establish seamless interactions via TON Wallet integra
 - **Smart Contracts:** FunC
 
 ## Visuals
-![Artist's Profile](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706255/IMG_8648_vvblzc.jpg)
-![Home Screen](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706260/IMG_8647_capow3.jpg)
-![Purchase NFT](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706249/IMG_8649_ewf2n9.jpg)
+![Artist's Profile](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706255/IMG_8648_vvblzc.jpg =250x)
+![Home Screen](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706260/IMG_8647_capow3.jpg =250x)
+![Purchase NFT](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706249/IMG_8649_ewf2n9.jpg =250x)
 
 ## Getting Started
 ...
