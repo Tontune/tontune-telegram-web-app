@@ -18,7 +18,6 @@ Artists and listeners can establish seamless interactions via TON Wallet integra
 ### NFT Minting and Trading
 - **Minting:** Artists can mint their songs as NFTs.
 - **Trading:** NFTs can be bought, sold, or traded across the Tontune platform in order to provide an exclusive access to artists' content.
-- **High-Quality Streaming:** Tontune ensures high-definition audio streaming, offering an immersive experience for listeners.
 
 ## Technology Stack
 - **Blockchain:** TON
