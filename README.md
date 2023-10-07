@@ -26,9 +26,9 @@ Artists and listeners can establish seamless interactions via TON Wallet integra
 - **Smart Contracts:** FunC
 
 ## Visuals
-![Artist's Profile](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706255/IMG_8648_vvblzc.jpg =250x)
-![Home Screen](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706260/IMG_8647_capow3.jpg =250x)
-![Purchase NFT](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706249/IMG_8649_ewf2n9.jpg =250x)
+<img src="https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706255/IMG_8648_vvblzc.jpg" alt="Artist's Profile" width="250"/>
+<img src="https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706260/IMG_8647_capow3.jpg" alt="Home Screen" width="250"/>
+<img src="https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706249/IMG_8649_ewf2n9.jpg" alt="Purchase NFT" width="250"/>
 
 ## Getting Started
 ...
