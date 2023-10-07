@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# Tontune: Bridging Melodies to the Decentralized World 🎶🌐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Visuals](#visuals)
+- [Getting Started](#getting-started)
+- [Support](#support)
+- [Contribution](#contribution)
+- [License](#license)
 
-Currently, two official plugins are available:
+## Introduction
+Tontune is a decentralized music streaming platform powered by the TON blockchain, aiming to create a peer-to-peer bridge between artists and listeners.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+### Web3 Integration
+Artists and listeners can establish seamless interactions via TON Wallet integrations.
 
-## Expanding the ESLint configuration
+### NFT Minting and Trading
+- **Minting:** Artists can mint their songs as NFTs.
+- **Trading:** NFTs can be bought, sold, or traded across the Tontune platform in order to provide an exclusive access to artists' content.
+- **High-Quality Streaming:** Tontune ensures high-definition audio streaming, offering an immersive experience for listeners.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technology Stack
+- **Blockchain:** TON
+- **Front-end:** React.js + TypeScript + Tailwind CSS
+- **Smart Contracts:** FunC
 
-- Configure the top-level `parserOptions` property like this:
+## Visuals
+![Artist's Profile](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706255/IMG_8648_vvblzc.jpg)
+![Home Screen](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706260/IMG_8647_capow3.jpg)
+![Purchase NFT](https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706249/IMG_8649_ewf2n9.jpg)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Getting Started
+...
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Support
+In case of queries or support, feel free to reach out via [Telegram](https://t.me/k_sterio).

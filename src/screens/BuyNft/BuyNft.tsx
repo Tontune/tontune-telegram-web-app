@@ -15,7 +15,7 @@ export function BuyNft() {
         image={nft4}
         price={3.91}
         download="#"
-        extra="max-w-[370px] h-auto"
+        extra="max-w-[370px] !h-auto"
       />
     </div>
   );
