@@ -95,9 +95,6 @@ slice calculate_nft_item_address(int wc, cell state_init) {
         return ();
     }
 
-    throw_unless(401, equal_slices(sender_address, owner_address));
-
-
     if (op == 1) { ;; deploy new nft
       int item_index = in_msg_body~load_uint(64);
       throw_unless(402, item_index <= next_item_index);
@@ -106,6 +103,8 @@ slice calculate_nft_item_address(int wc, cell state_init) {
       save_data(owner_address, next_item_index, content, nft_item_code, royalty_params);
       return ();
     }
+    
+    throw_unless(401, equal_slices(sender_address, owner_address));
     if (op == 2) { ;; batch deploy of new nfts
       int counter = 0;
       cell deploy_list = in_msg_body~load_ref();
