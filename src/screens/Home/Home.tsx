@@ -14,16 +14,6 @@ export function Home() {
           <h4 className="capitalize absolute text-navy-700 text-3xl font-bold dark:text-white">Explore New Artists</h4>
         </Card>
       </Link>
-
-      <Link to="/nft-collections">
-        <Card extra="items-center justify-center flex-col w-[334px] min-w-[334px] h-[334px] bg-cover cursor-pointer">
-          <div
-            className="relative flex h-full w-full justify-center items-center rounded-[20px] bg-cover bg-clip-border blur-[2px]"
-            style={{ backgroundImage: `url(src/assets/img/backgrounds/background2.jpg)` }}
-          />
-          <h4 className="capitalize absolute text-navy-700 text-3xl font-bold dark:text-white">Your NFTs Collection</h4>
-        </Card>
-      </Link>
     </div>
   );
 }

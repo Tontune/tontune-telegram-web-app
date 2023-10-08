@@ -1,18 +1,27 @@
-import avatar1 from 'assets/img/avatars/avatar1.png';
-import avatar2 from 'assets/img/avatars/avatar2.png';
-import avatar3 from 'assets/img/avatars/avatar3.png';
-import nft4 from 'assets/img/nfts/Nft4.png';
+import { useTonAddress } from '@tonconnect/ui-react';
+import nftItem from 'assets/img/nfts/NFT-item.jpeg';
+import { mintNewNft } from 'hooks/useNftContract';
+import { useTonClient } from 'hooks/useTonClient';
+import { Address } from 'ton';
 
 import NFTCard from 'components/card/NftCard';
 
 export function BuyNft() {
+  const rawAddress = useTonAddress();
+  const { client } = useTonClient();
+
+  const mintNft = async () => {
+    const r = await mintNewNft(client!, Address.parse(rawAddress), Address.parse(rawAddress));
+    console.log('mintNft', r);
+  };
+
   return (
     <div className="flex h-[70vh] justify-center items-center">
       <NFTCard
-        title="Purple Composition"
+        onClick={mintNft}
+        title="Celestial Harmonics"
         author="Lila Everwood"
-        bidders={[avatar1, avatar2, avatar3]}
-        image={nft4}
+        image={nftItem}
         price={3.91}
         download="#"
         extra="max-w-[370px] !h-auto"

@@ -62,7 +62,7 @@ export function Artist() {
             <Card extra="flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
               <div
                 className="relative flex h-full w-full justify-center items-center rounded-[20px] bg-cover bg-clip-border bg-[#000] !opacity-30"
-                style={{ backgroundImage: `url(src/assets/img/nfts/Nft2.png)` }}
+                style={{ backgroundImage: `url(src/assets/img/nfts/NFT-item.jpeg)` }}
               />
               <RiLockUnlockFill className="absolute text-inherit h-10 w-10 text-navy-700" />
             </Card>

@@ -28,16 +28,10 @@ const DropdownMenu = () => {
             <Link to="/artist" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
               Artist
             </Link>
-            <Link to="/nft-collections" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
-              NFT Collections
-            </Link>
-            <Link to="/ton-transfer" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
-              Transfer TON
-            </Link>
           </div>
         </div>
       }
-      classNames={'py-2 bottom-[-215px] left-[25px] !origin-top-left w-max'}
+      classNames={'py-2 bottom-[-150px] left-[25px] !origin-top-left w-max'}
     />
   );
 };

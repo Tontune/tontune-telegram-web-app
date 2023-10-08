@@ -4,13 +4,13 @@ const NftCard = (props: {
   image: string;
   title: string;
   author: string;
-  bidders?: string[];
   download?: string;
   price?: string | number;
   extra?: string;
+  onClick?: () => void;
   readonly?: boolean;
 }) => {
-  const { title, author, price, image, bidders, extra, readonly = false } = props;
+  const { title, author, price, image, extra, onClick, readonly = false } = props;
 
   return (
     <Card extra={`flex flex-col w-full h-full !p-4 3xl:p-![18px] bg-white ${extra}`}>
@@ -24,19 +24,6 @@ const NftCard = (props: {
             <p className="text-lg font-bold text-navy-700 dark:text-white"> {title} </p>
             <p className="mt-1 text-sm font-medium text-gray-600 md:mt-2">By {author} </p>
           </div>
-
-          {!readonly && (
-            <div className="flex flex-row-reverse md:mt-2 lg:mt-0">
-              <span className="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border border-white bg-[#E0E5F2] text-xs text-navy-700 dark:!border-navy-800 dark:bg-gray-800 dark:text-white">
-                +5
-              </span>
-              {bidders?.map((avt, key) => (
-                <span key={key} className="z-10 -mr-3 h-8 w-8 rounded-full border border-white dark:!border-navy-800">
-                  <img className="h-full w-full rounded-full object-cover" src={avt} alt="" />
-                </span>
-              ))}
-            </div>
-          )}
         </div>
 
         {!readonly && (
@@ -46,8 +33,11 @@ const NftCard = (props: {
                 Current Price: {price} <span>TON</span>
               </p>
             </div>
-            <button className="uppercase linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90">
-              Buy
+            <button
+              onClick={onClick}
+              className="uppercase linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:opacity-90"
+            >
+              MINT
             </button>
           </div>
         )}
