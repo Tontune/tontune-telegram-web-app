@@ -6,7 +6,8 @@ import { TuneNft } from '../../contracts/NFT/wrappers/TuneNft';
 
 const ITEM_CONTRACT_CODE = '';
 const COLLECTION_CONTRACT_CODE = '';
-const COLLECTION_ADDRESS = 'EQBnPvDkl3FN-KboHpFrRDq8LiXRCkFKj-FmKwtQw0GdCCa-';
+const COLLECTION_ADDRESS = 'EQAPzf8SlGdj3t_Qf0VqrUQUyeCaNbu7ltgqk_Vgei54FzsM'; // Your collection address
+
 // export async function deployContract(
 //     client: TonClient,
 //     address: string,
@@ -49,7 +50,7 @@ export async function mintNewNft(
   const collection = client.open(contract);
 
   await collection.sendMintNft(sender, {
-    value: toNano('0.1'),
+    value: toNano('1'),
     amount: toNano('0.025'),
     itemIndex: 0,
     itemOwnerAddress: minter, // usually addresss of sender

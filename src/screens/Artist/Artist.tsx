@@ -47,7 +47,7 @@ export function Artist() {
       <div className="flex flex-col">
         <h2 className="mb-1 text-navy-700 text-2xl font-bold dark:text-white">New Tracks</h2>
 
-        <div className="flex gap-3 overflow-x-auto overscroll-y-none py-3">
+        <div className="flex gap-3 overflow-x-auto overflow-y-none py-3">
           <Card
             extra="items-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer"
             onClick={() => setShowPlayer(!showPlayer)}

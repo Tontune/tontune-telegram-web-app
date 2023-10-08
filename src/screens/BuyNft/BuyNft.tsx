@@ -2,6 +2,7 @@ import { useTonAddress } from '@tonconnect/ui-react';
 import nftItem from 'assets/img/nfts/NFT-item.jpeg';
 import { mintNewNft } from 'hooks/useNftContract';
 import { useTonClient } from 'hooks/useTonClient';
+import { useTonConnect } from 'hooks/useTonConnect';
 import { Address } from 'ton';
 
 import NFTCard from 'components/card/NftCard';
@@ -9,10 +10,14 @@ import NFTCard from 'components/card/NftCard';
 export function BuyNft() {
   const rawAddress = useTonAddress();
   const { client } = useTonClient();
+  const { sender } = useTonConnect();
 
   const mintNft = async () => {
-    const r = await mintNewNft(client!, Address.parse(rawAddress), Address.parse(rawAddress));
-    console.log('mintNft', r);
+    if (client) {
+      mintNewNft(client!, Address.parse(rawAddress), sender!);
+    } else {
+      alert('Please connect to wallet first');
+    }
   };
 
   return (
@@ -22,7 +27,7 @@ export function BuyNft() {
         title="Celestial Harmonics"
         author="Lila Everwood"
         image={nftItem}
-        price={3.91}
+        price={1}
         download="#"
         extra="max-w-[370px] !h-auto"
       />
