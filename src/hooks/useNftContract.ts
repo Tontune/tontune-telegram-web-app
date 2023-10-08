@@ -1,11 +1,8 @@
 import { TonClient } from 'ton';
-import { Address, Cell, toNano } from 'ton-core';
+import { Address, toNano } from 'ton-core';
 
-import { buildCollectionContentCell } from '../../contracts/NFT/scripts/contentUtils/off-chain';
 import { TuneNft } from '../../contracts/NFT/wrappers/TuneNft';
 
-const ITEM_CONTRACT_CODE = '';
-const COLLECTION_CONTRACT_CODE = '';
 const COLLECTION_ADDRESS = 'EQAPzf8SlGdj3t_Qf0VqrUQUyeCaNbu7ltgqk_Vgei54FzsM'; // Your collection address
 
 // export async function deployContract(
