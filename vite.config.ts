@@ -10,12 +10,6 @@ export default defineConfig({
   plugins: [react(), basicSsl(), nodePolyfills(), tsconfigPaths()],
   build: {
     outDir: './docs',
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-        404: path.resolve(__dirname, 'public/404.html'),
-      },
-    },
   },
   base: '/tontune-telegram-web-app/',
 });

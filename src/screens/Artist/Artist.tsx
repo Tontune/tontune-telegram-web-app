@@ -93,7 +93,7 @@ export function Artist() {
         {showPlayer && (
           <div className="w-full mt-3">
             <audio className="w-full" controls>
-              <source src="/sound/test-track.mp3" type="audio/mpeg" />
+              <source src="sound/test-track.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>
