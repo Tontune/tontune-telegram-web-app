@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { RiLockUnlockFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import avatar1 from 'assets/img/avatars/avatar1.png';
 
 import Card from 'components/card';
+
+import avatar1 from '/public/img/avatars/avatar1.png';
 
 export function Artist() {
   const [showPlayer, setShowPlayer] = useState(false);
@@ -14,7 +15,7 @@ export function Artist() {
         {/* Background and profile */}
         <div
           className="relative mt-1 flex h-32 w-full justify-center rounded-xl bg-cover"
-          style={{ backgroundImage: `url(src/assets/img/banners/banner.png)` }}
+          style={{ backgroundImage: `url(/img/banners/banner.png)` }}
         >
           <div className="dark:!border-navy-700 absolute -bottom-12 flex h-[87px] w-[87px] items-center justify-center rounded-full border-[4px] border-white bg-pink-400">
             <img className="h-full w-full rounded-full" src={avatar1} alt="" />
@@ -53,16 +54,16 @@ export function Artist() {
             onClick={() => setShowPlayer(!showPlayer)}
           >
             <div
-              className="relative flex h-full w-full justify-center items-center rounded-[20px] bg-cover bg-clip-border"
-              style={{ backgroundImage: `url(src/assets/img/nfts/Nft1.png)` }}
+              className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
+              style={{ backgroundImage: `url(/img/nfts/Nft1.png)` }}
             />
           </Card>
 
           <Link to="/buy-nft">
-            <Card extra="flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
+            <Card extra="animate-pulse flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
               <div
-                className="relative flex h-full w-full justify-center items-center rounded-[20px] bg-cover bg-clip-border bg-[#000] !opacity-30"
-                style={{ backgroundImage: `url(src/assets/img/nfts/NFT-item.jpeg)` }}
+                className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border bg-[#000] !opacity-30"
+                style={{ backgroundImage: `url(/img/nfts/NFT-item.jpeg)` }}
               />
               <RiLockUnlockFill className="absolute text-inherit h-10 w-10 text-navy-700" />
             </Card>
@@ -73,16 +74,16 @@ export function Artist() {
             onClick={() => setShowPlayer(!showPlayer)}
           >
             <div
-              className="relative flex h-full w-full justify-center items-center rounded-[20px] bg-cover bg-clip-border"
-              style={{ backgroundImage: `url(src/assets/img/nfts/Nft4.png)` }}
+              className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
+              style={{ backgroundImage: `url(/img/nfts/Nft4.png)` }}
             />
           </Card>
 
           <Link to="/buy-nft">
-            <Card extra="flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
+            <Card extra="animate-pulse flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
               <div
-                className="relative flex h-full w-full justify-center items-center rounded-[20px] bg-cover bg-clip-border bg-[#000] !opacity-30"
-                style={{ backgroundImage: `url(src/assets/img/nfts/Nft5.png)` }}
+                className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border bg-[#000] !opacity-30"
+                style={{ backgroundImage: `url(/img/nfts/Nft5.png)` }}
               />
               <RiLockUnlockFill className="absolute text-inherit h-10 w-10 text-navy-700" />
             </Card>
@@ -92,7 +93,7 @@ export function Artist() {
         {showPlayer && (
           <div className="w-full mt-3">
             <audio className="w-full" controls>
-              <source src="src/assets/sound/test-track.mp3" type="audio/mpeg" />
+              <source src="/sound/test-track.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>
