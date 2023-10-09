@@ -16,6 +16,17 @@ Tontune is a decentralized music streaming platform powered by the TON blockchai
 ### Alpha Prototype Notice
 Please note that this is an **alpha prototype** of Tontune. This early version is to provide a glimpse and working functionality of the platform. The final product may have significant differences, additional features, and polished user interfaces. Your feedback at this stage is invaluable to help us iterate and improve!
 
+### Steps to Launch Tontune via Telegram Bot
+
+Tontune can be easily accessed and interacted with via our Telegram Bot, providing a smooth and integrated user experience. Here’s how you can get started:
+
+1. **Navigate to the Tontune Bot:** Open your Telegram app and search for the Tontune Bot or simply click on this link: [TontuneBot](https://t.me/TontuneBot/Tontune).
+
+2. **Launch Tontune TWA:** Once you're on the Tontune Bot chat, find and press the "Tontune TWA" button to launch the Telegram Web App (TWA).
+
+### Important Note for Minting NFTs
+In order to mint NFTs on Tontune, it's essential to **connect your wallet to the testnet first**. Ensure that your wallet is set up, funded (for transactions and gas fees), and connected before attempting to mint an NFT.
+
 ### Running the Web App Locally
 To get Tontune running on your local machine, follow these steps:
 
@@ -27,7 +38,7 @@ To get Tontune running on your local machine, follow these steps:
 
 4. To run the development server, use: `npm run dev`.
 
-### Smart Contract on Testnet
+#### Smart Contract on Testnet
 Our smart contract has been deployed on the testnet. This allows developers to interact with it, test its functionalities, and build on top of it without using real assets. The address and ABI for the smart contract is already set in all dependecies.
 
 ## Features
