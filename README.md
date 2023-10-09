@@ -11,10 +11,9 @@
 ## Introduction
 Tontune is a decentralized music streaming platform powered by the TON blockchain, aiming to create a peer-to-peer bridge between artists and listeners.
 
-## Getting Started
+:small_blue_diamond:Please note that this is an **alpha prototype** of Tontune. This early version is to provide a glimpse and working functionality of the platform. The final product may have significant differences, additional features, and polished user interfaces. Your feedback at this stage is invaluable to help us iterate and improve!
 
-### Alpha Prototype Notice
-Please note that this is an **alpha prototype** of Tontune. This early version is to provide a glimpse and working functionality of the platform. The final product may have significant differences, additional features, and polished user interfaces. Your feedback at this stage is invaluable to help us iterate and improve!
+## Getting Started
 
 ### Steps to Launch Tontune via Telegram Bot
 
@@ -24,7 +23,7 @@ Tontune can be easily accessed and interacted with via our Telegram Bot, providi
 
 2. **Launch Tontune TWA:** Once you're on the Tontune Bot chat, find and press the "Tontune TWA" button to launch the Telegram Web App (TWA).
 
-### Important Note for Minting NFTs
+### :exclamation:Important Note for Minting NFTs
 In order to mint NFTs on Tontune, it's essential to **connect your wallet to the testnet first**. Ensure that your wallet is set up, funded (for transactions and gas fees), and connected before attempting to mint an NFT.
 
 ### Running the Web App Locally
@@ -47,7 +46,7 @@ Artists and listeners can establish seamless interactions via wallets available 
 
 ### NFT Minting and Trading
 - **Minting:** Fans can mint artists' songs as NFTs.
-- **Trading:** NFTs can be bought, sold, or traded across the Tontune platform and existing NFT marketplaces in order to provide an exclusive access to artists' content.
+- *More features coming soon!*
 
 ## Technology Stack
 - **Blockchain:** TON
