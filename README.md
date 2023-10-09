@@ -11,7 +11,7 @@
 ## Introduction
 Tontune is a decentralized music streaming platform powered by the TON blockchain, aiming to create a peer-to-peer bridge between artists and listeners.
 
-:small_blue_diamond:Please note that this is an **alpha prototype** of Tontune. This early version is to provide a glimpse and working functionality of the platform. The final product may have significant differences, additional features, and polished user interfaces. Your feedback at this stage is invaluable to help us iterate and improve!
+Please note that this is an **alpha prototype** of Tontune. This early version is to provide a glimpse and working functionality of the platform. The final product may have significant differences, additional features, and polished user interfaces. Your feedback at this stage is invaluable to help us iterate and improve!
 
 ## Getting Started
 
