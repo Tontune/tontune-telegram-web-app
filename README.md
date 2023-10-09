@@ -1,5 +1,8 @@
 # Tontune: Bridging Melodies to the Decentralized World 🎶🌐
 
+:exclamation: [Presentation (PDF)](https://drive.google.com/file/d/1rFvgBOgUwmGKOK-MGTyXRDJvJhJ7-4Ro/view?usp=sharing)
+:exclamation: [Video Presentation](https://drive.google.com/file/d/1nqG7447bfP9hbwZDAqaqORPoIlpbSU22/view?usp=sharing)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
