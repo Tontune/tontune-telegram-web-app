@@ -32,16 +32,16 @@ Our smart contract has been deployed on the testnet. This allows developers to i
 
 ## Features
 ### Web3 Integration
-Artists and listeners can establish seamless interactions via TON Wallet integrations.
+Artists and listeners can establish seamless interactions via wallets available on TON (Ton Space, TonKeeper, TonHub, etc.).
 
 ### NFT Minting and Trading
-- **Minting:** Artists can mint their songs as NFTs.
-- **Trading:** NFTs can be bought, sold, or traded across the Tontune platform in order to provide an exclusive access to artists' content.
+- **Minting:** Fans can mint artists' songs as NFTs.
+- **Trading:** NFTs can be bought, sold, or traded across the Tontune platform and existing NFT marketplaces in order to provide an exclusive access to artists' content.
 
 ## Technology Stack
 - **Blockchain:** TON
 - **Front-end:** React.js + TypeScript + Tailwind CSS
-- **Smart Contracts:** FunC
+- **Smart Contracts:** FunC, Blueprint
 
 ## Visuals
 <img src="https://res.cloudinary.com/do6yo1hx8/image/upload/v1696706255/IMG_8648_vvblzc.jpg" alt="Artist's Profile" width="250"/>
