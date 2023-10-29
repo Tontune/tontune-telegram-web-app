@@ -5,7 +5,7 @@ import { TuneNft } from '../../contracts/NFT/wrappers/TuneNft';
 
 const COLLECTION_ADDRESS = 'EQAPzf8SlGdj3t_Qf0VqrUQUyeCaNbu7ltgqk_Vgei54FzsM'; // Your collection address
 
-// export async function deployContract(
+// export async function deployCollection(
 //     client: TonClient,
 //     address: string,
 //     sender: any,
@@ -55,3 +55,5 @@ export async function mintNewNft(
     queryId: Date.now(),
   });
 }
+
+
