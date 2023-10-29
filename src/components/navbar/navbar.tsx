@@ -2,9 +2,9 @@ import { CHAIN, TonConnectButton } from '@tonconnect/ui-react';
 import { useTonConnect } from 'hooks/useTonConnect';
 import { twJoin } from 'tailwind-merge';
 
-import Button from 'components/button';
+import Button from 'components/button/button';
 
-import DropdownMenu from './components/DropdownMenu';
+import DropdownMenu from './components/dropdown-menu';
 
 const Navbar = () => {
   const { network } = useTonConnect();

@@ -2,12 +2,15 @@ import { useState } from 'react';
 import { RiLockUnlockFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
-import Card from 'components/card';
+import Card from 'components/card/card';
 
 import avatar1 from '/public/img/avatars/avatar1.png';
+import { setIsStartListen } from 'store/slices/listen';
+import { useTypedDispatch } from 'store';
 
 export function Artist() {
   const [showPlayer, setShowPlayer] = useState(false);
+  const dispatch = useTypedDispatch();
 
   return (
     <div className="flex h-full w-full flex-col gap-6">
@@ -51,7 +54,7 @@ export function Artist() {
         <div className="flex gap-3 overflow-x-auto overflow-y-none py-3">
           <Card
             extra="items-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer"
-            onClick={() => setShowPlayer(!showPlayer)}
+            onClick={() => dispatch(setIsStartListen(true))}
           >
             <div
               className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"

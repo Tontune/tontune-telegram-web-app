@@ -1,10 +1,13 @@
-import { RiAlignJustify } from 'react-icons/ri';
+import { useState } from 'react';
+import { RiAlignJustify, RiMoonFill, RiSunFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
-import Button from 'components/button';
-import Dropdown from 'components/dropdown';
+import Button from 'components/button/button';
+import Dropdown from 'components/dropdown/dropdown';
 
 const DropdownMenu = () => {
+  const [darkmode, setDarkmode] = useState(document.body.classList.contains('dark'));
+
   return (
     <Dropdown
       button={
@@ -28,6 +31,26 @@ const DropdownMenu = () => {
             <Link to="/artist" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
               Artist
             </Link>
+            {/* NOTE: next release feature */}
+            {/* <div
+              className="cursor-pointer text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white flex items-center justify-start"
+              onClick={() => {
+                if (darkmode) {
+                  document.body.classList.remove('dark');
+                  setDarkmode(false);
+                } else {
+                  document.body.classList.add('dark');
+                  setDarkmode(true);
+                }
+              }}
+            >
+              Switch Theme{' '}
+              {darkmode ? (
+                <RiSunFill className="ml-2 h-4 w-4 text-gray-800 dark:text-white" />
+              ) : (
+                <RiMoonFill className="ml-2 h-4 w-4 text-gray-800 dark:text-white" />
+              )}
+            </div> */}
           </div>
         </div>
       }

@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import FixedPlugin from 'components/fixedPlugin/FixedPlugin';
-import Navbar from 'components/navbar';
+import Navbar from 'components/navbar/navbar';
 
 export function Layout() {
   return (
@@ -11,8 +10,6 @@ export function Layout() {
       <main className="transition-all !py-[35px] font-dm">
         <Outlet />
       </main>
-
-      <FixedPlugin />
     </div>
   );
 }

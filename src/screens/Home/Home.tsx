@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import Card from 'components/card';
+import { AudioPlayer } from 'components/audio-player';
+import Card from 'components/card/card';
+
 
 export function Home() {
   return (
@@ -14,6 +16,8 @@ export function Home() {
           <h4 className="capitalize absolute text-navy-700 text-3xl font-bold dark:text-white">Explore New Artists</h4>
         </Card>
       </Link>
+
+      <AudioPlayer />
     </div>
   );
 }
