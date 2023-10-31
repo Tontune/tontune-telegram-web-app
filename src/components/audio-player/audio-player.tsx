@@ -44,7 +44,7 @@ export const AudioPlayer = () => {
       if (audioId !== undefined) {
         setCurrentSongIndex(audioId);
       } else if (isActiveShuffle) {
-        setCurrentSongIndex(index => Math.floor(Math.random() * playlist.length));
+        setCurrentSongIndex((/* index */) => Math.floor(Math.random() * playlist.length));
       } else if (currentSongIndex < playlist.length - 1) {
         setCurrentSongIndex(i => i + 1);
       }
@@ -107,7 +107,7 @@ export const AudioPlayer = () => {
   );
 
   const handleAddToQueue = useCallback(
-    audioId => {
+    (audioId: any) => {
       const updatedPlaylist = [...playlist];
       const songToMove = updatedPlaylist[audioId];
       updatedPlaylist.push(songToMove);
