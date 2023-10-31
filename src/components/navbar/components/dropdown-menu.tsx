@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import { RiAlignJustify, RiMoonFill, RiSunFill } from 'react-icons/ri';
+import { RiAlignJustify } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
 import Button from 'components/button/button';
 import Dropdown from 'components/dropdown/dropdown';
 
 const DropdownMenu = () => {
-  const [darkmode, setDarkmode] = useState(document.body.classList.contains('dark'));
 
   return (
     <Dropdown

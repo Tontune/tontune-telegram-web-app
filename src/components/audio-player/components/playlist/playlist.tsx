@@ -4,8 +4,8 @@ import { twJoin } from 'tailwind-merge';
 import PauseIcon from '../../images/pause.svg?react';
 
 export const Playlist = ({
-  handlePlayNext,
-  handleAddToQueue,
+  /* handlePlayNext,
+  handleAddToQueue, */
   currentIdAudio,
   onNext,
 }: {
@@ -19,7 +19,7 @@ export const Playlist = ({
   return (
     <div className="mt-3 h-[140px] overflow-scroll pt-4">
       <div className="flex flex-col gap-3">
-        {playlist.map(({ name, author, audioUrl, id, duration, imageUrl }, index) => (
+        {playlist.map(({ name, /* author, audioUrl, id, */ duration, imageUrl }, index) => (
           <div className="flex cursor-pointer" key={index} onClick={() => onNext(index)}>
             <div
               className={twJoin(
