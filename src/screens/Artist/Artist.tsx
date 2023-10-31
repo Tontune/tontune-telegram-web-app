@@ -1,16 +1,48 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RiLockUnlockFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import { useTonAddress } from '@tonconnect/ui-react';
+import { fetchItemsByAddress } from 'hooks/TON_API';
+import { useTypedDispatch } from 'store';
+import { setAudioIndex, setIsStartListen, setPlaylist } from 'store/slices/listen';
+import generatePlaylist from 'utils/generatePlaylist';
 
 import Card from 'components/card/card';
+import Loader from 'components/loader/loader';
 
 import avatar1 from '/public/img/avatars/avatar1.png';
-import { setIsStartListen } from 'store/slices/listen';
-import { useTypedDispatch } from 'store';
 
 export function Artist() {
-  const [showPlayer, setShowPlayer] = useState(false);
+  const rawAddress = useTonAddress();
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isMinted, setIsMinted] = useState(false);
+
   const dispatch = useTypedDispatch();
+
+  useEffect(() => {
+    // If wallet is connected, check if user has any NFTs from the artist's collection
+    async function checkCollection() {
+      setIsLoading(true);
+
+      if (rawAddress) {
+        const res = await fetchItemsByAddress(rawAddress);
+
+        if (res.nft_items.length > 0) {
+          setIsMinted(true);
+        } else {
+          setIsMinted(false);
+        }
+      } else {
+        console.warn("Please connect to wallet, to check if user has any NFTs from the artist's collection");
+      }
+
+      dispatch(setPlaylist(generatePlaylist(isMinted)));
+      setIsLoading(false);
+    }
+
+    checkCollection();
+  }, [rawAddress, dispatch, isMinted]);
 
   return (
     <div className="flex h-full w-full flex-col gap-6">
@@ -34,15 +66,15 @@ export function Artist() {
         {/* Post followers */}
         <div className="mt-6 mb-3 flex gap-4 md:!gap-14">
           <div className="flex flex-col items-center justify-center">
-            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">17</h4>
+            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">3</h4>
             <p className="text-sm font-normal text-gray-600">Tracks</p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">900</h4>
+            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">926</h4>
             <p className="text-sm font-normal text-gray-600">Followers</p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">24</h4>
+            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">44</h4>
             <p className="text-sm font-normal text-gray-600">NFTs Minted</p>
           </div>
         </div>
@@ -52,55 +84,69 @@ export function Artist() {
         <h2 className="mb-1 text-navy-700 text-2xl font-bold dark:text-white">New Tracks</h2>
 
         <div className="flex gap-3 overflow-x-auto overflow-y-none py-3">
-          <Card
-            extra="items-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer"
-            onClick={() => dispatch(setIsStartListen(true))}
-          >
-            <div
-              className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
-              style={{ backgroundImage: `url(img/nfts/Nft1.png)` }}
-            />
-          </Card>
+          {isLoading ? (
+            <div className="w-full flex justify-center items-center">
+              <Loader />
+            </div>
+          ) : (
+            <>
+              <Card
+                extra="items-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer"
+                onClick={() => {
+                  dispatch(setAudioIndex(0));
+                  dispatch(setIsStartListen(true));
+                }}
+              >
+                <div
+                  className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
+                  style={{
+                    backgroundImage: `url(img/nfts/NFT-2.jpg)`,
+                  }}
+                />
+              </Card>
 
-          <Link to="/buy-nft">
-            <Card extra="animate-pulse flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
-              <div
-                className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border bg-[#000] !opacity-30"
-                style={{ backgroundImage: `url(img/nfts/NFT-item.jpeg)` }}
-              />
-              <RiLockUnlockFill className="absolute text-inherit h-10 w-10 text-navy-700" />
-            </Card>
-          </Link>
+              <Card
+                extra="items-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer"
+                onClick={() => {
+                  dispatch(setAudioIndex(1));
+                  dispatch(setIsStartListen(true));
+                }}
+              >
+                <div
+                  className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
+                  style={{ backgroundImage: `url(img/nfts/NFT-4.jpg)` }}
+                />
+              </Card>
 
-          <Card
-            extra="items-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer"
-            onClick={() => setShowPlayer(!showPlayer)}
-          >
-            <div
-              className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
-              style={{ backgroundImage: `url(img/nfts/Nft4.png)` }}
-            />
-          </Card>
-
-          <Link to="/buy-nft">
-            <Card extra="animate-pulse flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
-              <div
-                className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border bg-[#000] !opacity-30"
-                style={{ backgroundImage: `url(img/nfts/Nft5.png)` }}
-              />
-              <RiLockUnlockFill className="absolute text-inherit h-10 w-10 text-navy-700" />
-            </Card>
-          </Link>
+              {isMinted ? (
+                <Card
+                  extra="items-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer"
+                  onClick={() => {
+                    dispatch(setAudioIndex(2));
+                    dispatch(setIsStartListen(true));
+                  }}
+                >
+                  <div
+                    className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
+                    style={{
+                      backgroundImage: `url(img/nfts/NFT-3.jpg)`,
+                    }}
+                  />
+                </Card>
+              ) : (
+                <Link to="/buy-nft">
+                  <Card extra="animate-pulse flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
+                    <div
+                      className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border bg-[#000] !opacity-30"
+                      style={{ backgroundImage: `url(img/nfts/NFT-3.jpg)` }}
+                    />
+                    <RiLockUnlockFill className="absolute text-inherit h-10 w-10 text-navy-700" />
+                  </Card>
+                </Link>
+              )}
+            </>
+          )}
         </div>
-
-        {showPlayer && (
-          <div className="w-full mt-3">
-            <audio className="w-full" controls>
-              <source src="sound/test-track.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        )}
       </div>
 
       <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
@@ -113,7 +159,7 @@ export function Artist() {
             <div className="relative flex flex-col h-full w-full justify-start p-5 gap-3">
               <div>
                 <h3 className="text-navy-700 font-bold text-base dark:text-white">Date & Time:</h3>
-                <p className="text-sm font-normal text-gray-700">April 20th, 2023, 7:00 PM UTC</p>
+                <p className="text-sm font-normal text-gray-700">April 20th, 2024, 7:00 PM UTC</p>
               </div>
 
               <div>

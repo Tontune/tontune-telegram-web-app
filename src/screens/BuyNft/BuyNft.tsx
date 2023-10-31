@@ -6,7 +6,7 @@ import { Address } from 'ton';
 
 import NFTCard from 'components/card/nft-card';
 
-import nftItem from '/public/img/nfts/NFT-item.jpeg';
+import nftItem from '/public/img/nfts/NFT-1.jpeg';
 
 export function BuyNft() {
   const rawAddress = useTonAddress();
@@ -17,7 +17,7 @@ export function BuyNft() {
     if (client) {
       mintNewNft(client!, Address.parse(rawAddress), sender!);
     } else {
-      alert('Please connect to wallet first');
+      alert('Please connect your Testnet wallet first');
     }
   };
 

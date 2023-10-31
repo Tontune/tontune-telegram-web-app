@@ -35,6 +35,7 @@ const Dropdown = (props: { button: JSX.Element; children: JSX.Element; className
         className={`${classNames} absolute z-10 ${
           animation ? animation : 'origin-top-right transition-all duration-300 ease-in-out'
         } ${openWrapper ? 'scale-100' : 'scale-0'}`}
+        onClick={() => setOpenWrapper(!openWrapper)}
       >
         {children}
       </div>

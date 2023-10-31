@@ -1,7 +1,5 @@
 # Tontune: Bridging Melodies to the Decentralized World 🎶🌐
 
-:exclamation: [Presentation (PDF)](https://drive.google.com/file/d/1rFvgBOgUwmGKOK-MGTyXRDJvJhJ7-4Ro/view?usp=sharing)
-:exclamation: [Video Presentation](https://drive.google.com/file/d/1nqG7447bfP9hbwZDAqaqORPoIlpbSU22/view?usp=sharing)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -47,7 +45,7 @@ Our smart contract has been deployed on the testnet. This allows developers to i
 ### Web3 Integration
 Artists and listeners can establish seamless interactions via wallets available on TON (Ton Space, TonKeeper, TonHub, etc.).
 
-### NFT Minting and Trading
+### NFT Minting
 - **Minting:** Fans can mint artists' songs as NFTs.
 - *More features coming soon!*
 
