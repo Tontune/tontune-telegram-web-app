@@ -58,7 +58,6 @@ export const FullViewAudioBar = ({
 
   const { name, author, imageUrl } = currentSong;
 
-  console.log('isActiveShuffle', isActiveShuffle);
 
   return (
     <div className="flex flex-col justify-between">

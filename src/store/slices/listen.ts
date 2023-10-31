@@ -3,14 +3,16 @@ import { IListen } from 'types/listen';
 
 interface InitialListenState {
   isStartListen: boolean;
+  audioIndex: number;
   playlist: IListen[];
 }
 
 const initialListenState: InitialListenState = {
   isStartListen: false,
+  audioIndex: 0,
   playlist: [
     {
-      id: '1',
+      id: 'id_1',
       audioUrl: 'sound/test-track.mp3',
       name: 'Celestial Intro',
       description: 'Celestial Harmonics introduction',
@@ -18,11 +20,11 @@ const initialListenState: InitialListenState = {
       year: 2023,
       country: 'World',
       duration: 93,
-      imageUrl: 'img/nfts/NFT-item.jpeg',
+      imageUrl: 'img/nfts/NFT-2.jpg',
       free: true,
     },
     {
-      id: '2',
+      id: 'id_2',
       audioUrl: 'sound/future-bass.mp3',
       name: 'Celestial Future Bass',
       description: 'Celestial Harmonics introduction',
@@ -30,11 +32,11 @@ const initialListenState: InitialListenState = {
       year: 2023,
       country: 'World',
       duration: 93,
-      imageUrl: 'img/nfts/Nft4.png',
+      imageUrl: 'img/nfts/NFT-3.jpg',
       free: true,
     },
     {
-      id: '3',
+      id: 'id_3',
       audioUrl: 'sound/upbeat-electro.mp3',
       name: 'Celestial Upbeat Electro',
       description: 'Celestial Harmonics introduction',
@@ -42,8 +44,8 @@ const initialListenState: InitialListenState = {
       year: 2023,
       country: 'World',
       duration: 93,
-      imageUrl: 'img/nfts/Nft6.png',
-      free: true,
+      imageUrl: 'img/nfts/NFT-4.jpg',
+      free: false,
     },
   ],
 };
@@ -58,6 +60,12 @@ const listen = createSlice({
         isStartListen: payload,
       };
     },
+    setAudioIndex(state, { payload }: PayloadAction<number>) {
+      return {
+        ...state,
+        audioIndex: payload,
+      };
+    },
     setPlaylist(state, { payload }: PayloadAction<IListen[]>) {
       return {
         ...state,
@@ -67,6 +75,6 @@ const listen = createSlice({
   },
 });
 
-export const { setIsStartListen, setPlaylist } = listen.actions;
+export const { setIsStartListen, setAudioIndex, setPlaylist } = listen.actions;
 
 export default listen.reducer;

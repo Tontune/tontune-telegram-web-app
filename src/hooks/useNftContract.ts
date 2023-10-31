@@ -3,7 +3,7 @@ import { Address, toNano } from 'ton-core';
 
 import { TuneNft } from '../../contracts/NFT/wrappers/TuneNft';
 
-const COLLECTION_ADDRESS = 'EQAPzf8SlGdj3t_Qf0VqrUQUyeCaNbu7ltgqk_Vgei54FzsM'; // Your collection address
+const DEMO_COLLECTION_ADDRESS = import.meta.env.VITE_DEMO_COLLECTION_ADDRESS || '';
 
 // export async function deployCollection(
 //     client: TonClient,
@@ -43,7 +43,7 @@ export async function mintNewNft(
   sender: any,
   metadata: string = 'https://raw.githubusercontent.com/Cosmodude/TonTune/main/itemMetadata.json',
 ) {
-  const contract = TuneNft.createFromAddress(Address.parse(COLLECTION_ADDRESS));
+  const contract = TuneNft.createFromAddress(Address.parse(DEMO_COLLECTION_ADDRESS));
   const collection = client.open(contract);
 
   await collection.sendMintNft(sender, {
@@ -55,5 +55,3 @@ export async function mintNewNft(
     queryId: Date.now(),
   });
 }
-
-

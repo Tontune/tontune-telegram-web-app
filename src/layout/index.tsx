@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
+import { AudioPlayer } from 'components/audio-player';
 import Navbar from 'components/navbar/navbar';
 
 export function Layout() {
@@ -10,6 +11,10 @@ export function Layout() {
       <main className="transition-all !py-[35px] font-dm">
         <Outlet />
       </main>
+
+      <div className="mx-[-20px]">
+        <AudioPlayer />
+      </div>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { SyntheticEvent } from 'react';
 import { styled } from '@stitches/react';
-import CloseIcon from 'assets/icons/close.svg?react';
 import { IListen } from 'types/listen';
 
+import CloseIcon from '../../images/close.svg?react';
 import { MainControlButton } from '../main-control-button';
 
 interface Props {

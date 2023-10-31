@@ -12,6 +12,7 @@ export const AudioPlayer = () => {
   const dispatch = useTypedDispatch();
 
   const isStartListen = useTypedSelector(state => state.listen.isStartListen);
+  const audioIndex = useTypedSelector(state => state.listen.audioIndex);
   const playlist = useTypedSelector(state => state.listen.playlist);
 
   const [isPlay, setIsPlay] = useState(false);
@@ -29,6 +30,10 @@ export const AudioPlayer = () => {
   const currentSong = playlist[currentSongIndex];
 
   useEffect(() => {
+    setCurrentSongIndex(audioIndex);
+  }, [audioIndex]);
+
+  useEffect(() => {
     audioRef.current?.pause();
     audioRef.current?.load();
     audioRef.current?.play().catch(e => console.log(e));
@@ -36,7 +41,6 @@ export const AudioPlayer = () => {
 
   const handleNextAudio = useCallback(
     (audioId?: number) => {
-      console.log('audioId', audioId);
       if (audioId !== undefined) {
         setCurrentSongIndex(audioId);
       } else if (isActiveShuffle) {
