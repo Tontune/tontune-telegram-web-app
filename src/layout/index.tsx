@@ -5,7 +5,7 @@ import {CHAIN} from "@tonconnect/protocol";
 import {AudioPlayer} from 'components/audio-player';
 import Navbar from 'components/navbar/navbar';
 
-import NetworkAlert from "../components/network-alert/network-alert.tsx";
+import Alert from "../components/alert/alert.tsx";
 import {useTonConnect} from "../hooks/useTonConnect.ts";
 
 export function Layout() {
@@ -24,7 +24,7 @@ export function Layout() {
 
             <Navbar/>
 
-            {showNetworkAlert && <NetworkAlert type='warning' text={<>You&rsquo;re on&nbsp;the <strong
+            {showNetworkAlert && <Alert type='warning' text={<>You&rsquo;re on&nbsp;the <strong
                 className="font-bold">mainnet</strong> network. This app
                 supports&nbsp;
                 <strong className="font-bold">testnet</strong> wallets. Ensure your wallet is&nbsp;set to&nbsp;<strong

@@ -9,6 +9,8 @@ import { makeStore } from 'store';
 
 import '@twa-dev/sdk';
 
+import {MyTune} from "./screens/MyTune";
+
 import './index.css';
 
 const store = makeStore();
@@ -24,6 +26,7 @@ const router = createBrowserRouter(
         },
         { path: '/buy-nft', element: <BuyNft /> },
         { path: '/artist', element: <Artist /> },
+        { path: '/my-tune', element: <MyTune /> },
       ],
     },
   ],

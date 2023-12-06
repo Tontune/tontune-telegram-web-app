@@ -1,15 +1,7 @@
 import {FunctionComponent, ReactNode, useState} from "react";
 
-type AlertType = 'danger' | 'warning' | 'info' | 'success'
+import {AlertType, AlertTypeMap} from "./utils.ts";
 
-type AlertProperties = { heading: string; color: string }
-
-const AlertTypeMap: Record<AlertType, AlertProperties> = {
-    'danger': {heading: 'Danger', color: 'red'},
-    'warning': {heading: 'Warning', color: 'yellow'},
-    'info': {heading: 'Information', color: 'blue'},
-    'success': {heading: 'Success', color: 'green'},
-};
 
 interface AlertProps {
     type: AlertType;
@@ -18,7 +10,7 @@ interface AlertProps {
 
 const Alert: FunctionComponent<AlertProps> = (props) => {
     const {type, text} = props;
-    const {heading, color} = AlertTypeMap[type];
+    const {heading, colors} = AlertTypeMap[type];
 
     const [isClosed, setClosed] = useState(false);
 
@@ -28,7 +20,7 @@ const Alert: FunctionComponent<AlertProps> = (props) => {
 
     return (
         <div role="alert" className={`pt-[35px]`}>
-            <div className={`bg-${color}-500 text-white font-bold rounded-t px-4 py-2`}>
+            <div className={`${colors.bgHeading} text-white font-bold rounded-t px-4 py-2`}>
                 {heading}
                 <button
                     className="float-right text-white"
@@ -37,7 +29,7 @@ const Alert: FunctionComponent<AlertProps> = (props) => {
                 </button>
             </div>
             <div
-                className={`border border-t-0 border-${color}-400 rounded-b bg-${color}-100 px-4 py-3 text-${color}-700`}
+                className={`border border-t-0 ${colors.border} rounded-b ${colors.bgText} px-4 py-3 ${colors.text}`}
             >
                 <p>
                     {text}
