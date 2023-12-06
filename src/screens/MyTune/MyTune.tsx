@@ -7,12 +7,12 @@ export function MyTune() {
 
     return (
         <div className="flex h-full w-full flex-col gap-6">
-            <div className="mx-auto">
+            <div className="">
                 <h2 className="mb-4 text-navy-700 text-2xl font-bold dark:text-white">My Tune</h2>
                 <div className="flex flex-col gap-6 ml-4 mb-4 mx-auto">
-                    <div className="flex flex-row gap-6 mx-auto">
+                    <div className="flex flex-row gap-4 mx-auto">
                         <Card
-                            extra="items-center text-center justify-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
+                            extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
                             onClick={() => {
                             }}
                         >
@@ -20,7 +20,7 @@ export function MyTune() {
                             <span className="text-gray-400">Liked</span>
                         </Card>
                         <Card
-                            extra="items-center text-center justify-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
+                            extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
                             onClick={() => {
                             }}
                         >
@@ -28,7 +28,7 @@ export function MyTune() {
                             <span className="text-gray-400">Heart tokens</span>
                         </Card>
                         <Card
-                            extra="items-center text-center justify-center flex-col w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
+                            extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
                             onClick={() => {
                             }}
                         >
@@ -47,7 +47,7 @@ export function MyTune() {
                         onClick={() => {
                         }}
                     >
-                        <span className="font-bold text-2xl">Didactic Implementation</span>
+                        <span className="font-bold text-xl">Didactic Implementation</span>
                         <span className="text-gray-400">Within itself agent center check operation much.</span>
                         <span className="text-gray-400">Used 23 hearts</span>
                     </Card>
@@ -56,7 +56,7 @@ export function MyTune() {
                         onClick={() => {
                         }}
                     >
-                        <span className="font-bold text-2xl">Asynchronus Conglomeration</span>
+                        <span className="font-bold text-xl">Asynchronus Conglomeration</span>
                         <span className="text-gray-400">Culture group certain.</span>
                         <span className="text-gray-400">Used 31 hearts</span>
                     </Card>
