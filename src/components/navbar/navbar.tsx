@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav
       className={twJoin(
         'z-10 flex items-center justify-center rounded-xl transition-all',
-        'w-full',
+          'w-full',
         'backdrop-blur-sm dark:bg-[#0b14374d] md:top-4 xl:top-[20px]',
       )}
     >
