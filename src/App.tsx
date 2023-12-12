@@ -9,7 +9,9 @@ import { makeStore } from 'store';
 
 import '@twa-dev/sdk';
 
-import {MyTune} from "./screens/MyTune";
+import { leadersMock } from './mock/leaders.ts';
+import { Leaderboard } from './screens/Leaderboard';
+import { MyTune } from './screens/MyTune';
 
 import './index.css';
 
@@ -27,6 +29,7 @@ const router = createBrowserRouter(
         { path: '/buy-nft', element: <BuyNft /> },
         { path: '/artist', element: <Artist /> },
         { path: '/my-tune', element: <MyTune /> },
+        { path: '/leaderboard', element: <Leaderboard leaders={leadersMock} /> },
       ],
     },
   ],
