@@ -21,7 +21,7 @@ const Alert: FunctionComponent<AlertProps> = (props) => {
     return (
         <div role="alert" className={`pt-[35px]`}>
             <div className={`${colors.bgHeading} text-white font-bold rounded-t px-4 py-2`}>
-                {heading}
+                {heading},
                 <button
                     className="float-right text-white"
                     onClick={() => setClosed(true)}
