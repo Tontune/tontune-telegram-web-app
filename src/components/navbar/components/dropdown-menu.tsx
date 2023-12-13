@@ -1,15 +1,16 @@
 import { RiAlignJustify } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
-import Button from 'components/button/button';
-import Dropdown from 'components/dropdown/dropdown';
+import Dropdown from '@/components/dropdown/dropdown.tsx';
+import { Button } from '@/components/ui/button.tsx';
+
 
 const DropdownMenu = () => {
 
   return (
     <Dropdown
       button={
-        <Button extra="w-auto !bg-telegramButton" variant="primary">
+        <Button>
           <RiAlignJustify />
         </Button>
       }

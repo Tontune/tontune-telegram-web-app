@@ -1,11 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Layout } from 'layout';
-import { Artist } from 'screens/Artist';
-import { BuyNft } from 'screens/BuyNft';
-import { Home } from 'screens/Home';
-import { makeStore } from 'store';
+
+import { Layout } from '@/layout';
+import { Artist } from '@/screens/Artist';
+import { BuyNft } from '@/screens/BuyNft';
+import { Home } from '@/screens/Home';
+import { makeStore } from '@/store';
 
 import '@twa-dev/sdk';
 
