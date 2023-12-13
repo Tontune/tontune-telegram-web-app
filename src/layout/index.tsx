@@ -7,22 +7,33 @@ import { AudioPlayer } from '@/components/audio-player';
 import Navbar from '@/components/navbar/navbar.tsx';
 
 import { useTonConnect } from '../hooks/useTonConnect.ts';
+import { BountiesModal } from '@/components/bounties-modal';
+import { openModal } from '@/store/slices/modals.ts';
+import { useDispatch } from 'react-redux';
 
 export function Layout() {
 
   const { network, connected } = useTonConnect();
+  const dispatch = useDispatch();
 
   const [showNetworkAlert, setShowNetworkAlert] = useState(false);
 
   useEffect(() => {
     const isMainNet = network === CHAIN.MAINNET;
     setShowNetworkAlert(isMainNet);
+
+    if (connected === true) {
+      dispatch(openModal('bountiesModal'));
+    }
   }, [connected, network]);
+
+
 
   return (
     <div className='flex flex-col min-h-screen w-full bg-background dark:bg-background-900 dark:text-white p-5'>
 
       <Navbar />
+      <BountiesModal/>
 
       {showNetworkAlert && <Alert type='warning' text={<>You&rsquo;re on&nbsp;the <strong
         className='font-bold'>mainnet</strong> network. This app
