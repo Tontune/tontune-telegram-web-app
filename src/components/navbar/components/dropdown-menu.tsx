@@ -31,6 +31,9 @@ const DropdownMenu = () => {
             <Link to="/my-tune" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
               Profile
             </Link>
+            <Link to="/bounties" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
+              Bounties&nbsp;🌟
+            </Link>
             {/* NOTE: next release feature */}
             {/* <div
               className="cursor-pointer text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white flex items-center justify-start"
