@@ -2,7 +2,8 @@ import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import composeRefs from '@seznam/compose-react-refs';
 import { keyframes, styled } from '@stitches/react';
-import { useGetLatest } from 'hooks/utils/useGetLatest';
+
+import { useGetLatest } from '@/hooks/utils/useGetLatest';
 
 import ChevronDown from '../images/chevron-down.svg?react';
 

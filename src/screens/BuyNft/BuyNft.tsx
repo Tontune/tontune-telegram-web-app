@@ -1,10 +1,10 @@
 import { useTonAddress } from '@tonconnect/ui-react';
-import { mintNewNft } from 'hooks/useNftContract';
-import { useTonClient } from 'hooks/useTonClient';
-import { useTonConnect } from 'hooks/useTonConnect';
 import { Address } from 'ton';
 
-import NFTCard from 'components/card/nft-card';
+import NFTCard from '@/components/card/nft-card';
+import { mintNewNft } from '@/hooks/useNftContract';
+import { useTonClient } from '@/hooks/useTonClient';
+import { useTonConnect } from '@/hooks/useTonConnect';
 
 import nftItem from '/public/img/nfts/NFT-1.jpeg';
 
