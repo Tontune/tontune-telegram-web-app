@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IListen } from 'types/listen';
+
+import { IListen } from '@/types/listen';
 
 interface InitialListenState {
   isStartListen: boolean;
