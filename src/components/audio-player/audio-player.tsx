@@ -1,12 +1,12 @@
 import { SyntheticEvent, useCallback, useEffect, useRef, useState } from 'react';
 import isEmpty from 'lodash/isEmpty';
-import { useTypedDispatch, useTypedSelector } from 'store';
-import { setIsStartListen, setPlaylist } from 'store/slices/listen';
 
-import { AudioBar } from './components/audio-bar';
-import { FullViewAudioBar } from './components/audio-bar/full-view-audio-bar';
-import { BottomSheet } from './components/bottom-sheet';
-import { InternalAudio } from './components/internal-audio';
+import { AudioBar } from '@/components/audio-player/components/audio-bar';
+import { FullViewAudioBar } from '@/components/audio-player/components/audio-bar/full-view-audio-bar';
+import { BottomSheet } from '@/components/audio-player/components/bottom-sheet';
+import { InternalAudio } from '@/components/audio-player/components/internal-audio';
+import { useTypedDispatch, useTypedSelector } from '@/store';
+import { setIsStartListen, setPlaylist } from '@/store/slices/listen';
 
 export const AudioPlayer = () => {
   const dispatch = useTypedDispatch();
