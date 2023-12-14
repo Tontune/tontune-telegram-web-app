@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import Dropdown from '@/components/dropdown/dropdown.tsx';
 import { Button } from '@/components/ui/button.tsx';
 
-
 const DropdownMenu = () => {
-
   return (
     <Dropdown
       button={
@@ -15,7 +13,7 @@ const DropdownMenu = () => {
         </Button>
       }
       children={
-        <div className="flex h-max w-56 flex-col justify-start rounded-[20px] bg-white bg-cover bg-no-repeat pb-4 shadow-[0_20px_25px_-5px] shadow-shadow-500 dark:!bg-navy-700 dark:text-white dark:shadow-none">
+        <div className="flex h-max w-56 flex-col justify-start rounded-[20px] bg-white bg-cover bg-no-repeat pb-4 shadow-[25px] shadow-shadow-500 dark:!bg-navy-700 dark:text-white dark:shadow-none">
           <div className="mt-3 ml-4">
             <div className="flex items-center gap-2">
               <p className="text-base font-bold text-navy-700 dark:text-white">👋 Hey, Adela</p>
@@ -29,6 +27,9 @@ const DropdownMenu = () => {
             </Link>
             <Link to="/artist" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
               Artist
+            </Link>
+            <Link to="/my-tune" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
+              Profile
             </Link>
             {/* NOTE: next release feature */}
             {/* <div
@@ -53,7 +54,7 @@ const DropdownMenu = () => {
           </div>
         </div>
       }
-      classNames={'py-2 bottom-[-150px] left-[25px] !origin-top-left w-max'}
+      classNames={'py-2 bottom-[-175px] left-[25px] !origin-top-left w-max'}
     />
   );
 };
