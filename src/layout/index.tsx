@@ -20,7 +20,7 @@ export function Layout() {
   }, [connected, network]);
 
   return (
-    <div className='flex flex-col min-h-screen w-full bg-background-100 dark:bg-background-900 dark:text-white p-5'>
+    <div className='flex flex-col min-h-screen w-full bg-background dark:bg-background-900 dark:text-white p-5'>
 
       <Navbar />
 
