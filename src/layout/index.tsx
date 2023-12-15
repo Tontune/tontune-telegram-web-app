@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { CHAIN } from '@tonconnect/protocol';
 
 import Alert from '@/components/alert/alert.tsx';
 import { AudioPlayer } from '@/components/audio-player';
+import { BountiesModal } from '@/components/bounties-modal';
 import Navbar from '@/components/navbar/navbar.tsx';
+import { openModal } from '@/store/slices/modals.ts';
 
 import { useTonConnect } from '../hooks/useTonConnect.ts';
-import { BountiesModal } from '@/components/bounties-modal';
-import { openModal } from '@/store/slices/modals.ts';
-import { useDispatch } from 'react-redux';
 
 export function Layout() {
 
@@ -33,7 +33,6 @@ export function Layout() {
     <div className='flex flex-col min-h-screen w-full bg-background dark:bg-background-900 dark:text-white p-5'>
 
       <Navbar />
-      <BountiesModal/>
 
       {showNetworkAlert && <Alert type='warning' text={<>You&rsquo;re on&nbsp;the <strong
         className='font-bold'>mainnet</strong> network. This app
@@ -50,6 +49,10 @@ export function Layout() {
       <div className='mx-[-20px]'>
         <AudioPlayer />
       </div>
+
+      {/* Modals */}
+      <BountiesModal/>
+
     </div>
   );
 }

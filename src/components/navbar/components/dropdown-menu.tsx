@@ -57,7 +57,7 @@ const DropdownMenu = () => {
           </div>
         </div>
       }
-      classNames={'py-2 bottom-[-175px] left-[25px] !origin-top-left w-max'}
+      classNames={'py-2 top-[28px] left-[25px] !origin-top-left w-max'}
     />
   );
 };

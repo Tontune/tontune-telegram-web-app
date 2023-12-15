@@ -69,9 +69,10 @@ export const BountiesModal = () => {
               <strong>Claim:</strong> Mint any new artist NFT. Tokens will be credited upon confirmation.
             </p>
           </div>
-          <DialogFooter className='sm:justify-start'>
+          <DialogFooter className='sm:justify-center'>
             <DialogClose asChild>
-              <Button onClick={() => dispatch(closeModal('bountiesModal'))} type='button' variant='link'>
+              <Button className='w-[100%]' onClick={() => dispatch(closeModal('bountiesModal'))} type='button'
+                      variant='default'>
                 <Link to='/bounties'>Learn more</Link>
               </Button>
             </DialogClose>
