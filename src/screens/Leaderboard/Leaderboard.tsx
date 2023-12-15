@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { ArrowDownIcon, ArrowUpIcon, MinusIcon } from '@heroicons/react/24/outline';
 
 import Card from '../../components/card/card.tsx';
+
+const gradientColors = ['#fff7da', '#e3e3e3', '#ffe5ce'];
 
 type Leader = {
   name: string;
@@ -12,12 +14,24 @@ interface LeaderboardProps {
   leaders: Leader[];
 }
 
-export const Leaderboard: FC<LeaderboardProps> = ({ leaders }) => {
-  const getDeltaInfo = (delta: number) => {
+export const Leaderboard: FC<LeaderboardProps> = (props) => {
+
+  const { leaders } = props;
+
+  const getDeltaInfo = useCallback((delta: number) => {
     const deltaInfoMap: Record<number, { color: string; icon: JSX.Element }> = {
-      0: { color: 'var(--tg-theme-grey-color)', icon: <MinusIcon className='w-6 h-6 text-[color:var(--tg-theme-grey-color)]' /> },
-      1: { color: 'var(--tg-theme-green-color)', icon: <ArrowUpIcon className='w-6 h-6 text-[color:var(--tg-theme-green-color)]' /> },
-      '-1': { color: 'var(--tg-theme-red-color)', icon: <ArrowDownIcon className='w-6 h-6 text-[color:var(--tg-theme-red-color)]' /> },
+      0: {
+        color: 'var(--tg-theme-grey-color)',
+        icon: <MinusIcon className='w-6 h-6 text-[color:var(--tg-theme-grey-color)]' />,
+      },
+      1: {
+        color: 'var(--tg-theme-green-color)',
+        icon: <ArrowUpIcon className='w-6 h-6 text-[color:var(--tg-theme-green-color)]' />,
+      },
+      '-1': {
+        color: 'var(--tg-theme-red-color)',
+        icon: <ArrowDownIcon className='w-6 h-6 text-[color:var(--tg-theme-red-color)]' />,
+      },
     };
 
     const { color, icon } = deltaInfoMap[Math.sign(delta)] || deltaInfoMap[0];
@@ -28,9 +42,7 @@ export const Leaderboard: FC<LeaderboardProps> = ({ leaders }) => {
         <span className='text-xl font-extrabold'>{Math.abs(delta)}</span>
       </div>
     );
-  };
-
-  const gradientColors = ['#fff7da', '#e3e3e3', '#ffe5ce'];
+  }, []);
 
   return (
     <div className='flex h-full w-full flex-col gap-6'>
@@ -40,8 +52,9 @@ export const Leaderboard: FC<LeaderboardProps> = ({ leaders }) => {
           <Card
             key={index}
             extra={`p-6 justify-center text-left w-auto h-[80px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none`}
-            onClick={() => {}}
-            style={{ background: index < 3 ? `linear-gradient(to right, ${gradientColors[index]}, white)` : ''}}
+            onClick={() => {
+            }}
+            style={{ background: index < 3 ? `linear-gradient(to right, ${gradientColors[index]}, white)` : '' }}
           >
             <div className='flex justify-between items-center'>
               <div className='flex gap-6 items-center'>
