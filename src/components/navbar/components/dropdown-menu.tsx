@@ -22,6 +22,12 @@ const DropdownMenu = () => {
           <div className="mt-3 h-px w-full bg-gray-200 dark:bg-white/20 " />
 
           <div className="mt-3 ml-4 flex flex-col gap-3">
+            <Link
+              to="/leaderboard"
+              className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white"
+            >
+              Leaderboard&nbsp;🏆
+            </Link>
             <Link to="/artist" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
               Artist&nbsp;🧑‍🎤
             </Link>
