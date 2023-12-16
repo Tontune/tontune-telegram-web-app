@@ -40,6 +40,7 @@ const DEMO_COLLECTION_ADDRESS = import.meta.env.VITE_DEMO_COLLECTION_ADDRESS || 
 export async function mintNewNft(
   client: TonClient,
   minter: Address,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   sender: any,
   metadata: string = 'https://raw.githubusercontent.com/Cosmodude/TonTune/main/itemMetadata.json',
 ) {

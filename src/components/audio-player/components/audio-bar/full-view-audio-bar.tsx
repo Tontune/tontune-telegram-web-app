@@ -1,10 +1,11 @@
 import { RefObject, SyntheticEvent } from 'react';
 import { RiLoopLeftFill, RiShuffleFill } from 'react-icons/ri';
 import { isEmpty } from 'lodash';
-import { useTypedSelector } from 'store';
 import { twJoin } from 'tailwind-merge';
-import { IListen } from 'types/listen';
-import { formatDuration } from 'utils/formatDuration';
+
+import { useTypedSelector } from '@/store';
+import { IListen } from '@/types/listen';
+import { formatDuration } from '@/utils/formatDuration';
 
 import NextIcon from '../../images/control.svg?react';
 import { MainControlButton } from '../main-control-button';
@@ -64,7 +65,7 @@ export const FullViewAudioBar = ({
       <div className="flex items-center">
         {imageUrl ? (
           <div className="w-[88px] h-[88px] flex items-center justify-center brightness-50">
-            <img src={imageUrl} className="w-full rounded-md" />
+            <img alt='img' src={imageUrl} className="w-full rounded-md" />
           </div>
         ) : null}
         <div className="ml-5">

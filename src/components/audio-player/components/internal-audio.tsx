@@ -1,5 +1,6 @@
 import { RefObject } from 'react';
-import { IListen } from 'types/listen';
+
+import { IListen } from '@/types/listen';
 
 interface InternalAudioProps {
   audioRef: RefObject<HTMLAudioElement>;
