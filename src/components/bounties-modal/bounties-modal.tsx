@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button.tsx';
 import {
-  Dialog, DialogClose,
+  Dialog,
+  DialogClose,
   DialogContent,
-  DialogDescription, DialogFooter,
+  DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog.tsx';
@@ -22,14 +24,14 @@ export const BountiesModal = () => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => handleOpenChange(open)}>
-      <DialogContent className='max-w-[425px] mx-auto'>
-        <DialogHeader className='mb-4'>
-          <DialogTitle className='text-2xl font-bold'>🌟 Explore Bounties! 🌟</DialogTitle>
+    <Dialog open={isOpen} onOpenChange={open => handleOpenChange(open)}>
+      <DialogContent className="max-w-[375px] max-h-full overflow-auto mx-auto">
+        <DialogHeader className="mb-4">
+          <DialogTitle className="text-2xl font-bold">🌟 Explore Bounties! 🌟</DialogTitle>
         </DialogHeader>
         <DialogDescription>
-          <div className='bounty-task mb-6'>
-            <DialogTitle className='text-xl font-bold mb-2'>🎶&nbsp;&nbsp;Discover Artists</DialogTitle>
+          <div className="bounty-task mb-6">
+            <DialogTitle className="text-xl font-bold mb-2">🎶&nbsp;&nbsp;Discover Artists</DialogTitle>
 
             <p>
               <strong>Description:</strong> Follow three new artists on Tontune. Add fresh vibes to your playlist.
@@ -42,8 +44,8 @@ export const BountiesModal = () => {
             </p>
           </div>
 
-          <div className='bounty-task mb-6'>
-            <DialogTitle className='text-xl font-bold mb-2'>🎧&nbsp;&nbsp;Music Explorer</DialogTitle>
+          <div className="bounty-task mb-6">
+            <DialogTitle className="text-xl font-bold mb-2">🎧&nbsp;&nbsp;Music Explorer</DialogTitle>
 
             <p>
               <strong>Description:</strong> Listen to 10 new tracks on Tontune and experience undiscovered melodies.
@@ -56,8 +58,8 @@ export const BountiesModal = () => {
             </p>
           </div>
 
-          <div className='bounty-task mb-6'>
-            <DialogTitle className='text-xl font-bold mb-2'>🖼️&nbsp;&nbsp;NFT Supporter</DialogTitle>
+          <div className="bounty-task mb-6">
+            <DialogTitle className="text-xl font-bold mb-2">🖼️&nbsp;&nbsp;NFT Supporter</DialogTitle>
 
             <p>
               <strong>Description:</strong> Mint the latest NFTs on Tontune and support artists' creative journey.
@@ -69,15 +71,18 @@ export const BountiesModal = () => {
               <strong>Claim:</strong> Mint any new artist NFT. Tokens will be credited upon confirmation.
             </p>
           </div>
-          <DialogFooter className='sm:justify-center'>
+          <DialogFooter className="sm:justify-center">
             <DialogClose asChild>
-              <Button className='w-[100%]' onClick={() => dispatch(closeModal('bountiesModal'))} type='button'
-                      variant='default'>
-                <Link to='/bounties'>Learn more</Link>
+              <Button
+                className="w-[100%]"
+                onClick={() => dispatch(closeModal('bountiesModal'))}
+                type="button"
+                variant="default"
+              >
+                <Link to="/bounties">Learn more</Link>
               </Button>
             </DialogClose>
           </DialogFooter>
-
         </DialogDescription>
       </DialogContent>
     </Dialog>
