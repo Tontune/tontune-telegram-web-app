@@ -15,23 +15,23 @@ const DropdownMenu = () => {
       children={
         <div className="flex h-max w-56 flex-col justify-start rounded-[20px] bg-white bg-cover bg-no-repeat pb-4 shadow-[25px] shadow-shadow-500 dark:!bg-navy-700 dark:text-white dark:shadow-none">
           <div className="mt-3 ml-4">
-            <div className="flex items-center gap-2">
-              <p className="text-base font-bold text-navy-700 dark:text-white">👋 Hey, Adela</p>
-            </div>
+            <Link to="/" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
+              Home&nbsp;🏠
+            </Link>
           </div>
           <div className="mt-3 h-px w-full bg-gray-200 dark:bg-white/20 " />
 
           <div className="mt-3 ml-4 flex flex-col gap-3">
-            <Link to="/" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
-              Home
-            </Link>
             <Link to="/artist" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
-              Artist
+              Artist&nbsp;🧑‍🎤
             </Link>
             <Link to="/my-tune" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
-              Profile
+              Profile&nbsp;💎
             </Link>
-            <Link to="/bounties" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
+            <Link
+              to="/bounties"
+              className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white"
+            >
               Bounties&nbsp;🌟
             </Link>
             {/* NOTE: next release feature */}
