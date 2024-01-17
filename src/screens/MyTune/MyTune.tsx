@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Button } from '@/components/ui/button.tsx';
 
 import Card from '../../components/card/card.tsx';
@@ -15,25 +17,29 @@ export function MyTune() {
               extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
               onClick={() => {}}
             >
-              <span className="font-bold text-2xl">30</span>
+              <span className="font-bold text-xl">30</span>
               <span className="text-gray-400">Liked</span>
             </Card>
             <Card
               extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
               onClick={() => {}}
+              style={{ boxShadow: '0px 2px 10px 0px rgba(168, 85, 247, 1), 0px -2px 10px 0px rgba(14, 165, 233, 0.7)' }}
             >
-              <span className="font-bold text-2xl">102</span>
+              <span className="font-bold text-xl">102</span>
               <span className="text-gray-400">Heart tokens</span>
             </Card>
             <Card
               extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
               onClick={() => {}}
             >
-              <span className="font-bold text-2xl">5</span>
+              <span className="font-bold text-xl">5</span>
               <span className="text-gray-400">Artist Supporting</span>
             </Card>
           </div>
-          <Button>Mint Tokens</Button>
+
+          <Link to="/tokens">
+            <Button className="w-full">Mint Tokens</Button>
+          </Link>
         </div>
 
         <h2 className="mb-4 pt-4 text-navy-700 text-2xl font-bold dark:text-white">Registered events</h2>
