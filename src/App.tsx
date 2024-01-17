@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Layout } from '@/layout';
 import { Artist } from '@/screens/Artist';
-import { Bounties } from '@/screens/Bounties';
 import { BuyNft } from '@/screens/BuyNft';
 import { Home } from '@/screens/Home';
 import { WorkInProgress } from '@/screens/WorkInProgress';
