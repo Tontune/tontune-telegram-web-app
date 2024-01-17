@@ -4,19 +4,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Layout } from '@/layout';
 import { Artist } from '@/screens/Artist';
+import { Bounties } from '@/screens/Bounties';
 import { BuyNft } from '@/screens/BuyNft';
 import { Home } from '@/screens/Home';
+import { WorkInProgress } from '@/screens/WorkInProgress';
 import { makeStore } from '@/store';
 
 import '@twa-dev/sdk';
 
 import { leadersMock } from './mock/leaders.ts';
 import { Leaderboard } from './screens/Leaderboard';
-
 import { MyTune } from './screens/MyTune';
 
 import './index.css';
-import { Bounties } from '@/screens/Bounties';
 
 const store = makeStore();
 
@@ -33,8 +33,10 @@ const router = createBrowserRouter(
         { path: '/artist', element: <Artist /> },
         { path: '/my-tune', element: <MyTune /> },
         { path: '/leaderboard', element: <Leaderboard leaders={leadersMock} /> },
-        { path: '/bounties', element: <Bounties /> },
-
+        { path: '/bounties', element: <WorkInProgress /> },
+        { path: '/staking', element: <WorkInProgress /> },
+        { path: '/battles', element: <WorkInProgress /> },
+        { path: '/tokens', element: <WorkInProgress /> },
       ],
     },
   ],
