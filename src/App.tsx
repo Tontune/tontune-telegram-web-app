@@ -4,16 +4,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Layout } from '@/layout';
 import { Artist } from '@/screens/Artist';
+import { Battles } from '@/screens/Battles/Battles.tsx';
 import { BuyNft } from '@/screens/BuyNft';
 import { Home } from '@/screens/Home';
+import { Leaderboard } from '@/screens/Leaderboard';
+import { MyTune } from '@/screens/MyTune';
 import { WorkInProgress } from '@/screens/WorkInProgress';
 import { makeStore } from '@/store';
 
 import '@twa-dev/sdk';
 
 import { leadersMock } from './mock/leaders.ts';
-import { Leaderboard } from './screens/Leaderboard';
-import { MyTune } from './screens/MyTune';
 
 import './index.css';
 
@@ -33,7 +34,7 @@ const router = createBrowserRouter(
         { path: '/my-tune', element: <MyTune /> },
         { path: '/leaderboard', element: <Leaderboard leaders={leadersMock} /> },
         { path: '/staking', element: <WorkInProgress /> },
-        { path: '/battles', element: <WorkInProgress /> },
+        { path: '/battles', element: <Battles /> },
         { path: '/tokens', element: <WorkInProgress /> },
         { path: '/events', element: <WorkInProgress /> },
       ],

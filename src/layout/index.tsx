@@ -6,9 +6,7 @@ import WebApp from '@twa-dev/sdk';
 
 import Alert from '@/components/alert/alert.tsx';
 import { AudioPlayer } from '@/components/audio-player';
-import { BountiesModal } from '@/components/bounties-modal';
 import Navbar from '@/components/navbar/navbar.tsx';
-import { openModal } from '@/store/slices/modals.ts';
 
 import { useTonConnect } from '../hooks/useTonConnect.ts';
 
@@ -38,10 +36,6 @@ export function Layout() {
   useEffect(() => {
     const isMainNet = network === CHAIN.MAINNET;
     setShowNetworkAlert(isMainNet);
-
-    if (connected === true) {
-      dispatch(openModal('bountiesModal'));
-    }
   }, [connected, network, dispatch]);
 
   return (
@@ -90,9 +84,6 @@ export function Layout() {
       <div className="mx-[-20px]">
         <AudioPlayer />
       </div>
-
-      {/* Modals */}
-      <BountiesModal />
     </div>
   );
 }

@@ -22,7 +22,7 @@ export function MyTune() {
 
       <div>
         <h2 className="mb-4 text-navy-700 text-2xl font-bold dark:text-white">My Tune</h2>
-        <div className="flex flex-col gap-6 ml-4 mb-4 mx-auto">
+        <div className="flex flex-col gap-6 mb-4 mx-auto">
           <div className="flex flex-row gap-4 mx-auto">
             <Card
               extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
@@ -54,7 +54,7 @@ export function MyTune() {
         </div>
 
         <h2 className="mb-4 pt-4 text-navy-700 text-2xl font-bold dark:text-white">Registered events</h2>
-        <div className="flex flex-col gap-4 mb-4 ml-4 mx-auto">
+        <div className="flex flex-col gap-4 mb-4 mx-auto">
           <Card
             extra="items-start p-6 text-left  justify-center flex-col h-[118px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
             onClick={() => {}}
@@ -77,7 +77,7 @@ export function MyTune() {
           <h2 className="mb-1 text-navy-700 text-2xl font-bold dark:text-white">You liked </h2>
           <button className="text-gray-800 text-lg font-bold ">View all</button>
         </div>
-        <div className="flex flex-col ml-4 gap-2 mx-auto">
+        <div className="flex flex-col gap-2 mx-auto">
           <Card
             extra="p-6 justify-center text-left w-auto h-[80px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
             onClick={() => {}}
@@ -142,7 +142,7 @@ export function MyTune() {
           <h2 className="mb-1 text-navy-700 text-2xl font-bold dark:text-white">You have supported</h2>
           <button className="text-gray-800 text-lg font-bold ">View all</button>
         </div>
-        <div className="flex flex-col ml-4 gap-2 mx-auto">
+        <div className="flex flex-col gap-2 mx-auto">
           <Card
             extra="p-6 justify-center text-left w-auto h-[80px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
             onClick={() => {}}
