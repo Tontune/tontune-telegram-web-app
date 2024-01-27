@@ -1,5 +1,3 @@
-import { twMerge } from 'tailwind-merge';
-
 import Card from '@/components/cards/card';
 
 const BountyCard = (props: {
