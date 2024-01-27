@@ -3,7 +3,7 @@ import { RiLockUnlockFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { useTonAddress } from '@tonconnect/ui-react';
 
-import Card from '@/components/card/card';
+import Card from '@/components/cards/card';
 import Loader from '@/components/loader/loader';
 import { Button } from '@/components/ui/button';
 import { fetchItemsByAddress } from '@/hooks/TON_API.ts';

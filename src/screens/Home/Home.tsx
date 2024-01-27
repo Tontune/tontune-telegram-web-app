@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
 
-import Card from '@/components/card/card';
+import BountyCard from '@/components/cards/bounty-card';
+import Card from '@/components/cards/card';
+import { Quests } from '@/mock/quests';
 
 const HomePages = [
   { title: 'Leaderboard', icon: '🏆', link: '/leaderboard' },
   { title: 'Artist', icon: '🎙️', link: '/artist' },
   { title: 'My Tune', icon: '💎', link: '/my-tune' },
-  { title: 'Battles', icon: '⚔️', link: '/battles' },
-  { title: 'Bounties', icon: '🌟', link: '/bounties' },
   { title: 'Staking', icon: '📈', link: '/staking' },
+  { title: 'Battles', icon: '⚔️', link: '/battles' },
+  { title: 'Events', icon: '🎟️', link: '/events' },
 ];
 
 const HomeBox = ({ title, icon, link }: { title: string; icon: string; link: string }) => {
@@ -31,8 +33,18 @@ const HomeBox = ({ title, icon, link }: { title: string; icon: string; link: str
 
 export function Home() {
   return (
-    <div className="flex justify-center">
-      <div className="grid h-full w-[375px] grid-cols-2 gap-4">
+    <div className="flex flex-col justify-center gap-6">
+      <div className="flex flex-col gap-3">
+        <h1 className="text-xl font-medium">Daily challenges</h1>
+
+        <div className="flex overflow-auto w-full gap-4 pb-3" style={{ scrollbarWidth: 'thin' }}>
+          {Quests.map((item, index) => (
+            <BountyCard key={index} {...item} />
+          ))}
+        </div>
+      </div>
+
+      <div className="grid h-full grid-cols-2 gap-4">
         {HomePages.map((item, index) => (
           <HomeBox key={index} {...item} />
         ))}

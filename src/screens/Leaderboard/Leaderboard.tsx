@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import { ArrowDownIcon, ArrowUpIcon, MinusIcon } from '@heroicons/react/24/outline';
 
-import Card from '../../components/card/card.tsx';
+import Card from '@/components/cards/card.tsx';
 
 const gradientColors = [
   'linear-gradient(180deg, #0EA5E9 0%, #A855F7 96.24%)',

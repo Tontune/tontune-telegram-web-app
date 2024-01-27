@@ -3,7 +3,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { THEME, TonConnectUIProvider } from '@tonconnect/ui-react';
 import WebApp from '@twa-dev/sdk';
 
+import pkg from '../package.json';
+
 import App from './App.tsx';
+
+console.log(`App: Tontune TMA | Version: ${pkg.version}`);
 
 // this manifest is used temporarily for development purposes
 const manifestUrl =

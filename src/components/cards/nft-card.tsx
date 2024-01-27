@@ -1,4 +1,4 @@
-import Card from '@/components/card/card';
+import Card from '@/components/cards/card';
 import { Button } from '@/components/ui/button.tsx';
 
 const NftCard = (props: {

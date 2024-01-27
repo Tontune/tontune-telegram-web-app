@@ -1,15 +1,26 @@
 import { Link } from 'react-router-dom';
 
+import BountyCard from '@/components/cards/bounty-card';
+import Card from '@/components/cards/card.tsx';
 import { Button } from '@/components/ui/button.tsx';
-
-import Card from '../../components/card/card.tsx';
+import { Quests } from '@/mock/quests';
 
 import avatar1 from '/public/img/avatars/avatar1.png';
 
 export function MyTune() {
   return (
     <div className="flex h-full w-full flex-col gap-6">
-      <div className="">
+      <div className="flex flex-col gap-3">
+        <h1 className="text-xl font-medium">Daily challenges</h1>
+
+        <div className="flex overflow-auto w-full gap-4 pb-3" style={{ scrollbarWidth: 'thin' }}>
+          {Quests.map((item, index) => (
+            <BountyCard key={index} {...item} />
+          ))}
+        </div>
+      </div>
+
+      <div>
         <h2 className="mb-4 text-navy-700 text-2xl font-bold dark:text-white">My Tune</h2>
         <div className="flex flex-col gap-6 ml-4 mb-4 mx-auto">
           <div className="flex flex-row gap-4 mx-auto">
@@ -86,7 +97,7 @@ export function MyTune() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 32 32"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="#82D616"
                   className="w-6 h-6 mt-1"
                 >
@@ -115,7 +126,7 @@ export function MyTune() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 32 32"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="#82D616"
                   className="w-6 h-6 mt-1"
                 >

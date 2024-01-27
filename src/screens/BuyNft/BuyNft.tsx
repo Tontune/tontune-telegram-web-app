@@ -1,7 +1,7 @@
 import { useTonAddress } from '@tonconnect/ui-react';
 import { Address } from 'ton';
 
-import NFTCard from '@/components/card/nft-card';
+import NFTCard from '@/components/cards/nft-card';
 import { mintNewNft } from '@/hooks/useNftContract';
 import { useTonClient } from '@/hooks/useTonClient';
 import { useTonConnect } from '@/hooks/useTonConnect';
