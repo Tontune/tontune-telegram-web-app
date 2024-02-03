@@ -6,6 +6,7 @@ import { Layout } from '@/layout';
 import { Artist } from '@/screens/Artist';
 import { Battles } from '@/screens/Battles/Battles.tsx';
 import { BuyNft } from '@/screens/BuyNft';
+import { Events } from '@/screens/Events';
 import { Home } from '@/screens/Home';
 import { Leaderboard } from '@/screens/Leaderboard';
 import { MyTune } from '@/screens/MyTune';
@@ -36,7 +37,7 @@ const router = createBrowserRouter(
         { path: '/staking', element: <WorkInProgress /> },
         { path: '/battles', element: <Battles /> },
         { path: '/tokens', element: <WorkInProgress /> },
-        { path: '/events', element: <WorkInProgress /> },
+        { path: '/events', element: <Events /> },
       ],
     },
   ],
