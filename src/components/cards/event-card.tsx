@@ -1,16 +1,9 @@
 import { FC } from 'react';
 import clock from 'src/assets/icons/clock.svg';
 import pin from 'src/assets/icons/pin.svg';
-import { Location } from 'src/types/events.ts';
+import { Event } from 'src/types/events.ts';
 
-interface EventCardProps {
-  name: string;
-  location: Location;
-  time: string;
-  coverSrc: string;
-}
-
-export const EventCard: FC<EventCardProps> = (props) => {
+export const EventCard: FC<Event> = (props) => {
   const { time, location, coverSrc, name } = props;
 
   return (
