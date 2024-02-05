@@ -1,16 +1,17 @@
-import { EventCard } from '@/components/cards/event-card.tsx';
-
 import { Link } from 'react-router-dom';
-import { events } from '@/mock/events.ts';
 
+import { EventCard } from '@/components/cards/event-card.tsx';
+import { events } from '@/mock/events.ts';
 
 export const Events = () => {
   return (
-    <div className='flex h-full w-full flex-col gap-6'>
-      <h2 className='mb-4 text-navy-700 text-2xl font-bold dark:text-white'>Upcoming Events</h2>
+    <div className="flex h-full w-full flex-col gap-6">
+      <h2 className="mb-4 text-navy-700 text-2xl font-bold dark:text-white">Upcoming Events</h2>
       <div className="flex flex-col gap-4">
-        {events.map((props) => (
-          <Link to={`/event/${props.id}`}><EventCard key={props.name} {...props}/></Link>
+        {events.map(props => (
+          <Link key={props.id} to={`/events/${props.id}`}>
+            <EventCard key={props.name} {...props} />
+          </Link>
         ))}
       </div>
     </div>
