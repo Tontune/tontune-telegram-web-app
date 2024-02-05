@@ -28,8 +28,8 @@ const DropdownMenu = () => {
             >
               Leaderboard&nbsp;🏆
             </Link>
-            <Link to="/artist" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
-              Artist&nbsp;🧑‍🎤
+            <Link to="/artists" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
+              Artists&nbsp;🧑‍🎤
             </Link>
             <Link to="/my-tune" className="text-base font-semibold text-gray-800 dark:text-white hover:dark:text-white">
               Profile&nbsp;💎

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import BountyCard from '@/components/cards/bounty-card';
 import Card from '@/components/cards/card.tsx';
 import { Button } from '@/components/ui/button.tsx';
-import { Quests } from '@/mock/quests';
+import { questsMock } from '@/mock/quests';
 
-import avatar1 from '/public/img/avatars/avatar1.png';
+import avatar1 from '@/assets/img/avatars/avatar1.png?url';
 
 export function MyTune() {
   return (
@@ -14,7 +14,7 @@ export function MyTune() {
         <h1 className="text-xl font-medium">Daily challenges</h1>
 
         <div className="flex overflow-auto w-full gap-4 pb-3" style={{ scrollbarWidth: 'thin' }}>
-          {Quests.map((item, index) => (
+          {questsMock.map((item, index) => (
             <BountyCard key={index} {...item} />
           ))}
         </div>

@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom';
 
 import BountyCard from '@/components/cards/bounty-card';
 import Card from '@/components/cards/card';
-import { Quests } from '@/mock/quests';
+import { questsMock } from '@/mock/quests';
 
 const HomePages = [
-  { title: 'Leaderboard', icon: '🏆', link: '/leaderboard' },
-  { title: 'Artist', icon: '🎙️', link: '/artist' },
+  { title: 'Artists', icon: '🎙️', link: '/artists' },
   { title: 'My Tune', icon: '💎', link: '/my-tune' },
-  { title: 'Staking', icon: '📈', link: '/staking' },
   { title: 'Battles', icon: '⚔️', link: '/battles' },
   { title: 'Events', icon: '🎟️', link: '/events' },
+  { title: 'Leaderboard', icon: '🏆', link: '/leaderboard' },
+  { title: 'Staking', icon: '📈', link: '/staking' },
 ];
 
 const HomeBox = ({ title, icon, link }: { title: string; icon: string; link: string }) => {
@@ -38,7 +38,7 @@ export function Home() {
         <h1 className="text-xl font-medium">Daily challenges</h1>
 
         <div className="flex overflow-auto w-full gap-4 pb-3" style={{ scrollbarWidth: 'thin' }}>
-          {Quests.map((item, index) => (
+          {questsMock.map((item, index) => (
             <BountyCard key={index} {...item} />
           ))}
         </div>

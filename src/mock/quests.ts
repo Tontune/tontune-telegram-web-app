@@ -1,4 +1,4 @@
-export const Quests = [
+export const questsMock = [
   {
     title: 'Follow 2 artists',
     total: 2,

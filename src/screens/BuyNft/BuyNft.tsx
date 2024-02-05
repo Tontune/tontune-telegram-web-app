@@ -6,7 +6,7 @@ import { mintNewNft } from '@/hooks/useNftContract';
 import { useTonClient } from '@/hooks/useTonClient';
 import { useTonConnect } from '@/hooks/useTonConnect';
 
-import nftItem from '/public/img/nfts/NFT-1.jpeg';
+import nftItem from '@/assets/img/avatars/NFT-1.jpeg?url';
 
 export function BuyNft() {
   const rawAddress = useTonAddress();

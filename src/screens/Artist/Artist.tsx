@@ -3,22 +3,24 @@ import { RiLockUnlockFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { useTonAddress } from '@tonconnect/ui-react';
 
+import NFT2 from '@/assets/img/nfts/NFT-2.jpg?url';
+import NFT3 from '@/assets/img/nfts/NFT-3.jpg?url';
+import NFT4 from '@/assets/img/nfts/NFT-4.jpg?url';
 import Card from '@/components/cards/card';
 import Loader from '@/components/loader/loader';
 import { Button } from '@/components/ui/button';
 import { fetchItemsByAddress } from '@/hooks/TON_API.ts';
 import { useTypedDispatch } from '@/store';
 import { setAudioIndex, setIsStartListen, setPlaylist } from '@/store/slices/listen.ts';
+import { IArtist } from '@/types/artist.ts';
 import generatePlaylist from '@/utils/generatePlaylist.ts';
 
-import avatar1 from '/public/img/avatars/avatar1.png';
-
-export function Artist() {
+export function Artist({ artistInfo }: { artistInfo: IArtist }) {
   const rawAddress = useTonAddress();
 
   const [isLoading, setIsLoading] = useState(false);
   const [isMinted, setIsMinted] = useState(false);
-  const [isFollowed, setIsFollowed] = useState(() => localStorage.getItem('followArist'));
+  const [isFollowed, setIsFollowed] = useState(() => sessionStorage.getItem('followArtist'));
 
   const dispatch = useTypedDispatch();
 
@@ -52,17 +54,22 @@ export function Artist() {
         {/* Background and profile */}
         <div
           className="relative mt-1 flex h-32 w-full justify-center rounded-xl bg-cover"
-          style={{ backgroundImage: `url(img/banners/banner.png)` }}
+          style={{ backgroundImage: `url(${artistInfo?.banner})` }}
         >
           <div className="dark:!border-navy-700 absolute -bottom-12 flex h-[87px] w-[87px] items-center justify-center rounded-full border-[4px] border-white bg-pink-400">
-            <img className="h-full w-full rounded-full" src={avatar1} alt="" />
+            <img
+              className="h-full w-full rounded-full"
+              style={{ backgroundSize: '', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+              src={artistInfo?.img}
+              alt="Artist's Profile Image"
+            />
           </div>
         </div>
 
-        {/* Name and position */}
+        {/* Name and genre */}
         <div className="mt-16 flex flex-col items-center">
-          <h4 className="text-navy-700 text-xl font-bold dark:text-white">Lila Everwood</h4>
-          <h5 className="text-base font-normal text-gray-600">Electro-Folk</h5>
+          <h4 className="text-navy-700 text-xl font-bold dark:text-white">{artistInfo?.name}</h4>
+          <h5 className="text-base font-normal text-gray-600">{artistInfo?.genre}</h5>
         </div>
 
         {/* Follow */}
@@ -73,10 +80,10 @@ export function Artist() {
             onClick={() => {
               if (isFollowed) {
                 setIsFollowed(null);
-                localStorage.removeItem('followArist');
+                sessionStorage.removeItem('followArtist');
               } else {
                 setIsFollowed('true');
-                localStorage.setItem('followArist', 'true');
+                sessionStorage.setItem('followArtist', 'true');
               }
             }}
           >
@@ -91,18 +98,18 @@ export function Artist() {
             <p className="text-sm font-normal text-gray-600">Tracks</p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">926</h4>
+            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">{artistInfo?.followers}</h4>
             <p className="text-sm font-normal text-gray-600">Followers</p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">44</h4>
+            <h4 className="text-navy-700 text-2xl font-bold dark:text-white">{artistInfo?.NFTMinted}</h4>
             <p className="text-sm font-normal text-gray-600">NFTs Minted</p>
           </div>
         </div>
       </Card>
 
       <div className="flex flex-col">
-        <h2 className="mb-1 text-navy-700 text-2xl font-bold dark:text-white">New Tracks</h2>
+        <h2 className="mb-1 text-navy-700 text-2xl font-bold dark:text-white">Music</h2>
 
         <div className="flex gap-3 overflow-x-auto overflow-y-none py-3">
           {isLoading ? (
@@ -121,7 +128,7 @@ export function Artist() {
                 <div
                   className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
                   style={{
-                    backgroundImage: `url(img/nfts/NFT-2.jpg)`,
+                    backgroundImage: `url(${NFT2})`,
                   }}
                 />
               </Card>
@@ -135,7 +142,7 @@ export function Artist() {
               >
                 <div
                   className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
-                  style={{ backgroundImage: `url(img/nfts/NFT-4.jpg)` }}
+                  style={{ backgroundImage: `url(${NFT4})` }}
                 />
               </Card>
 
@@ -150,7 +157,7 @@ export function Artist() {
                   <div
                     className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border"
                     style={{
-                      backgroundImage: `url(img/nfts/NFT-3.jpg)`,
+                      backgroundImage: `url(${NFT3})`,
                     }}
                   />
                 </Card>
@@ -159,7 +166,7 @@ export function Artist() {
                   <Card extra="animate-pulse flex flex-col justify-center items-center w-[118px] min-w-[118px] h-[118px] p-1 bg-cover cursor-pointer">
                     <div
                       className="relative flex h-full w-full justify-center items-center rounded-[16px] bg-cover bg-clip-border bg-[#000] !opacity-30"
-                      style={{ backgroundImage: `url(img/nfts/NFT-3.jpg)` }}
+                      style={{ backgroundImage: `url(${NFT3})` }}
                     />
                     <RiLockUnlockFill className="absolute text-inherit h-10 w-10 text-navy-700" />
                   </Card>
