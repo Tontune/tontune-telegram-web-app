@@ -1,12 +1,11 @@
 import { useTonAddress } from '@tonconnect/ui-react';
 import { Address } from 'ton';
 
+import nftItem from '@/assets/img/nfts/NFT-1.jpeg?url';
 import NFTCard from '@/components/cards/nft-card';
 import { mintNewNft } from '@/hooks/useNftContract';
 import { useTonClient } from '@/hooks/useTonClient';
 import { useTonConnect } from '@/hooks/useTonConnect';
-
-import nftItem from '@/assets/img/avatars/NFT-1.jpeg?url';
 
 export function BuyNft() {
   const rawAddress = useTonAddress();
