@@ -1,34 +1,34 @@
 export const leadersMock = [
   {
-    name: 'Maxim',
+    name: 'Evelyn',
     delta: 1,
   },
   {
-    name: 'Vlad',
+    name: 'Liam',
     delta: -1,
   },
   {
-    name: 'Kirill',
+    name: 'Sophia',
     delta: 0,
   },
   {
-    name: 'Alexander',
+    name: 'Charlotte',
     delta: 2,
   },
   {
-    name: 'Maxim',
+    name: 'Isabella',
     delta: 1,
   },
   {
-    name: 'Vlad',
+    name: 'Mason',
     delta: -1,
   },
   {
-    name: 'Kirill',
+    name: 'Olivia',
     delta: 2,
   },
   {
-    name: 'Alexander',
+    name: 'James',
     delta: -4,
   },
 ];

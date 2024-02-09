@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Layout } from '@/layout';
 import { Artist } from '@/screens/Artist';
-import { Battles } from '@/screens/Battles/Battles.tsx';
+import { Artists } from '@/screens/Artists';
+import { Battles } from '@/screens/Battles';
 import { BuyNft } from '@/screens/BuyNft';
 import { Event } from '@/screens/Event';
 import { Events } from '@/screens/Events';
@@ -16,6 +17,7 @@ import { makeStore } from '@/store';
 
 import '@twa-dev/sdk';
 
+import { artistsMock } from './mock/artists.ts';
 import { leadersMock } from './mock/leaders.ts';
 
 import './index.css';
@@ -32,7 +34,23 @@ const router = createBrowserRouter(
           element: <Home />,
         },
         { path: '/buy-nft', element: <BuyNft /> },
-        { path: '/artist', element: <Artist /> },
+        {
+          path: '/artists',
+          children: [
+            {
+              index: true,
+              element: <Artists />,
+            },
+            {
+              path: 'nft-musician',
+              element: <Artist artistInfo={artistsMock[1]} />,
+            },
+            {
+              path: 'm88g',
+              element: <Artist artistInfo={artistsMock[0]} />,
+            },
+          ],
+        },
         { path: '/my-tune', element: <MyTune /> },
         { path: '/leaderboard', element: <Leaderboard leaders={leadersMock} /> },
         { path: '/staking', element: <WorkInProgress /> },

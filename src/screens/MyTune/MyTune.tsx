@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import BountyCard from '@/components/cards/bounty-card';
 import Card from '@/components/cards/card.tsx';
 import { Button } from '@/components/ui/button.tsx';
-import { Quests } from '@/mock/quests';
+import { questsMock } from '@/mock/quests';
 
-import avatar1 from '/public/img/avatars/avatar1.png';
+import avatar1 from '@/assets/img/avatars/avatar1.png?url';
 
 export function MyTune() {
   return (
@@ -14,7 +14,7 @@ export function MyTune() {
         <h1 className="text-xl font-medium">Daily challenges</h1>
 
         <div className="flex overflow-auto w-full gap-4 pb-3" style={{ scrollbarWidth: 'thin' }}>
-          {Quests.map((item, index) => (
+          {questsMock.map((item, index) => (
             <BountyCard key={index} {...item} />
           ))}
         </div>
@@ -101,7 +101,7 @@ export function MyTune() {
                   stroke="#82D616"
                   className="w-6 h-6 mt-1"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
                 </svg>
                 <span className="text-lime-500 text-xl">12</span>
               </div>
@@ -130,7 +130,7 @@ export function MyTune() {
                   stroke="#82D616"
                   className="w-6 h-6 mt-1"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
                 </svg>
                 <span className="text-lime-500 text-xl">12</span>
               </div>
