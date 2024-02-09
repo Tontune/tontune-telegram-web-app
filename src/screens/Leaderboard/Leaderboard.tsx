@@ -65,7 +65,6 @@ export const Leaderboard: FC<LeaderboardProps> = props => {
                 </div>
                 <div className="flex flex-col text-black">
                   <span className="font-bold text-lg">{leader.name}</span>
-                  <span>Increase Project Nice</span>
                 </div>
               </div>
               {getDeltaInfo(leader.delta)}

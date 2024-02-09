@@ -6,9 +6,8 @@ import buttonRight from '@/assets/icons/button-right.svg';
 import clock from '@/assets/icons/clock.svg';
 import diamond from '@/assets/icons/diamond.svg';
 import pin from '@/assets/icons/pin.svg';
+import avatar4 from '@/assets/img/avatars/avatar4.png?url';
 import { events } from '@/mock/events.ts';
-
-import avatar4 from '../../../public/img/avatars/avatar4.png';
 
 interface ITicketCounts {
   standard: number;

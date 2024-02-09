@@ -101,7 +101,7 @@ export function MyTune() {
                   stroke="#82D616"
                   className="w-6 h-6 mt-1"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
                 </svg>
                 <span className="text-lime-500 text-xl">12</span>
               </div>
@@ -130,7 +130,7 @@ export function MyTune() {
                   stroke="#82D616"
                   className="w-6 h-6 mt-1"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
                 </svg>
                 <span className="text-lime-500 text-xl">12</span>
               </div>
