@@ -61,6 +61,12 @@ export function Artist({ artistInfo }: { artistInfo: IArtist }) {
   return (
     <div className="flex h-full w-full flex-col gap-6">
       <Card extra="items-center flex-col w-full h-full p-[16px] bg-cover">
+        <Link to="/artists">
+          <Button variant="default" className="absolute z-10 left-2 text-xs">
+            &#x2190;
+          </Button>
+        </Link>
+
         {/* Background and profile */}
         <div
           className="relative mt-1 flex h-32 w-full justify-center rounded-xl bg-cover"
