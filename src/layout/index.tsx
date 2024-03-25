@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import { CHAIN } from '@tonconnect/protocol';
 import WebApp from '@twa-dev/sdk';
 
 import Alert from '@/components/alert/alert.tsx';
@@ -10,15 +9,13 @@ import { AudioPlayer } from '@/components/audio-player';
 import Navbar from '@/components/navbar/navbar.tsx';
 import { increase } from '@/store/slices/balance.ts';
 
-import { useTonConnect } from '../hooks/useTonConnect.ts';
-
 import 'react-toastify/dist/ReactToastify.css';
 
 export function Layout() {
-  const { network, connected } = useTonConnect();
+  // const { network, connected } = useTonConnect();
   const dispatch = useDispatch();
 
-  const [showNetworkAlert, setShowNetworkAlert] = useState(false);
+  // const [showNetworkAlert, setShowNetworkAlert] = useState(false);
   const [showWelcomeAlert, setShowWelcomeAlert] = useState(false);
 
   // Handle new user welcome alert & local storage
@@ -49,10 +46,10 @@ export function Layout() {
   }, [dispatch]);
 
   // Handle network alert
-  useEffect(() => {
+  /* useEffect(() => {
     const isMainNet = network === CHAIN.MAINNET;
     setShowNetworkAlert(isMainNet);
-  }, [connected, network, dispatch]);
+  }, [connected, network, dispatch]); */
 
   return (
     <div className="flex flex-col min-h-screen w-full bg-background dark:bg-background-900 dark:text-white p-5">
