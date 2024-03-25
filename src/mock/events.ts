@@ -1,4 +1,3 @@
-import event1 from '@/assets/img/backgrounds/event1.png?url';
 import event2 from '@/assets/img/backgrounds/event2.png?url';
 import event3 from '@/assets/img/backgrounds/event3.png?url';
 import { Event } from '@/types/events.ts';
