@@ -72,7 +72,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: '/' },
+  { basename: '/tontune-telegram-web-app' },
 );
 
 function App() {
