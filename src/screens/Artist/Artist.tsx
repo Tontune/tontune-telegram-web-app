@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { RiLockUnlockFill } from 'react-icons/ri';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 // import { useTonAddress } from '@tonconnect/ui-react';
 import Card from '@/components/cards/card';
@@ -8,6 +10,8 @@ import Loader from '@/components/loader/loader';
 import { Button } from '@/components/ui/button';
 // import { fetchItemsByAddress } from '@/hooks/TON_API.ts';
 import { useTypedDispatch } from '@/store';
+import { RootState } from '@/store/reducer';
+import { decrease, increase } from '@/store/slices/balance.ts';
 import { setAudioIndex, setIsStartListen, setPlaylist } from '@/store/slices/listen.ts';
 import { IArtist } from '@/types/artist.ts';
 // import generatePlaylist from '@/utils/generatePlaylist.ts';
@@ -20,6 +24,7 @@ export function Artist({ artistInfo }: { artistInfo: IArtist }) {
   const [isFollowed, setIsFollowed] = useState(() => sessionStorage.getItem('followArtist'));
 
   const dispatch = useTypedDispatch();
+  const tuneBalance = useSelector((state: RootState) => state.balance.tuneCoins);
 
   // If wallet is connected, check if user has any NFTs from the artist's collection
   // NOTE: Removed until the we use the real DB
@@ -97,9 +102,35 @@ export function Artist({ artistInfo }: { artistInfo: IArtist }) {
               if (isFollowed) {
                 setIsFollowed(null);
                 sessionStorage.removeItem('followArtist');
+
+                // ❗Demo❗: Deduct 10 coins to user's balance
+                if (tuneBalance >= 10) {
+                  dispatch(decrease(5));
+                  toast(`🧑‍🎤 You've unfollowed the artist too early! -5 Tune coins deducted`, {
+                    position: 'top-center',
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                  });
+                }
               } else {
                 setIsFollowed('true');
                 sessionStorage.setItem('followArtist', 'true');
+
+                // ❗Demo❗: Add 10 coins to user's balance
+                dispatch(increase(10));
+                toast(`🧑‍🎤 Thanks for supporting the artist! +10 Tune coins added`, {
+                  position: 'top-center',
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: 'light',
+                });
               }
             }}
           >

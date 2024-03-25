@@ -1,7 +1,6 @@
-import BattleCard from '@/components/cards/battle-card';
-
 import avatar3 from '@/assets/img/avatars/avatar3.png?url';
 import avatar11 from '@/assets/img/avatars/avatar11.png?url';
+import BattleCard from '@/components/cards/battle-card';
 
 export function Battles() {
   return (

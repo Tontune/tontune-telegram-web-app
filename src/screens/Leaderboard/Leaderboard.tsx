@@ -49,7 +49,7 @@ export const Leaderboard: FC<LeaderboardProps> = props => {
 
   return (
     <div className="flex h-full w-full flex-col gap-6">
-      <h1 className="text-center text-navy-700 text-2xl font-bold dark:text-white">Leaderboard 🏆</h1>
+      <h1 className="text-center text-navy-700 text-2xl font-bold dark:text-white">Community Leaderboard 🏆</h1>
       <div className="flex flex-col gap-2">
         {leaders.map((leader, index) => (
           <Card

@@ -4,7 +4,8 @@ import event3 from '@/assets/img/backgrounds/event3.png?url';
 import { Event } from '@/types/events.ts';
 
 export const events: Event[] = [
-  {
+  // Test data
+  /* {
     id: '0',
     name: 'Concert name',
     location: {
@@ -13,7 +14,7 @@ export const events: Event[] = [
     },
     time: 'HH:MM PM',
     coverSrc: event1,
-  },
+  }, */
   {
     id: '1',
     name: 'Lil uzi vert’s concert',

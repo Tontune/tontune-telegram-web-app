@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import { CHAIN } from '@tonconnect/protocol';
 import WebApp from '@twa-dev/sdk';
 
 import Alert from '@/components/alert/alert.tsx';
 import { AudioPlayer } from '@/components/audio-player';
 import Navbar from '@/components/navbar/navbar.tsx';
+import { increase } from '@/store/slices/balance.ts';
 
 import { useTonConnect } from '../hooks/useTonConnect.ts';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Layout() {
   const { network, connected } = useTonConnect();
@@ -27,10 +31,22 @@ export function Layout() {
       // Set new user flag with TG username
       window.localStorage.setItem('newUser', user);
 
-      // Set intial quests
+      // Set initial quests
       window.localStorage.setItem('quests', user);
+
+      // Add some coins to new user's balance
+      dispatch(increase(10));
+      toast(`🦄 We've added 100 Tune coins to your balance as welcome bonus!`, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
     }
-  }, []);
+  }, [dispatch]);
 
   // Handle network alert
   useEffect(() => {
@@ -42,7 +58,8 @@ export function Layout() {
     <div className="flex flex-col min-h-screen w-full bg-background dark:bg-background-900 dark:text-white p-5">
       <Navbar />
 
-      {showNetworkAlert && (
+      {/* NOTE: disabled for now */}
+      {/* {showNetworkAlert && (
         <Alert
           type="warning"
           text={
@@ -54,7 +71,7 @@ export function Layout() {
             </>
           }
         />
-      )}
+      )} */}
 
       {showWelcomeAlert && (
         <Alert
@@ -84,6 +101,19 @@ export function Layout() {
       <div className="mx-[-20px]">
         <AudioPlayer />
       </div>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }

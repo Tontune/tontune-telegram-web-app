@@ -1,7 +1,12 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import Card from '@/components/cards/card';
 import { Button } from '@/components/ui/button.tsx';
+import { useTypedDispatch } from '@/store';
+import { RootState } from '@/store/reducer';
+import { decrease, increase } from '@/store/slices/balance';
 
 const BattleCard = (props: {
   imageLeft: string;
@@ -13,8 +18,10 @@ const BattleCard = (props: {
   onClick?: () => void;
 }) => {
   const { title, buttonLeft, buttonRight, imageLeft, imageRight, extra } = props;
+  const dispatch = useTypedDispatch();
+  const tuneBalance = useSelector((state: RootState) => state.balance.tuneCoins);
 
-  const [isVoted, setIsVoted] = useState(() => localStorage.getItem('submitBattleVote'));
+  const [isVoted, setIsVoted] = useState(localStorage.getItem('submitBattleVote') || null);
 
   // Mocked onClick function
   const handleClick = () => {
@@ -22,10 +29,34 @@ const BattleCard = (props: {
       setIsVoted(null);
       localStorage.removeItem('submitBattleVote');
 
-      window.alert('Thanks, your vote has been submitted!🎙️');
+      // ❗Demo❗: Deduct 15 coins to user's balance
+      if (tuneBalance >= 15) {
+        dispatch(decrease(15));
+        toast(`⚔️ You reset the battle! -15 Tune coins deducted`, {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+      }
     } else {
       setIsVoted('true');
       localStorage.setItem('submitBattleVote', 'true');
+
+      // ❗Demo❗: Add 15 coins to user's balance
+      dispatch(increase(15));
+      toast(`⚔️ Thanks for participating in a battle! +15 Tune coins added`, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
     }
   };
 
@@ -43,7 +74,7 @@ const BattleCard = (props: {
           <h1 className="text-xl font-semibold mb-4">{title}</h1>
 
           <div className="flex w-full items-center justify-between gap-2">
-            {isVoted ? (
+            {!isVoted ? (
               <>
                 <Button variant="secondary" className="grow" onClick={handleClick}>
                   {buttonLeft}
