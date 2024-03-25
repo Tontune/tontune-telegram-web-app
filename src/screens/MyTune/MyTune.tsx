@@ -88,7 +88,7 @@ export function MyTune() {
           <Card
             extra="items-start p-6 text-left  justify-center flex-col h-[118px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
             onClick={() => {
-              navigate('/events/2');
+              navigate('/events/1');
             }}
             style={{ boxShadow: '0px 2px 10px 0px rgba(168, 85, 247, 1), 0px -2px 10px 0px rgba(14, 165, 233, 0.7)' }}
           >
@@ -101,7 +101,7 @@ export function MyTune() {
           <Card
             extra="items-start p-6 text-left justify-center w-auto flex-col h-[118px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
             onClick={() => {
-              navigate('/events/1');
+              navigate('/events/0');
             }}
           >
             <span className="font-bold text-xl">Lil uzi vert’s concert</span>

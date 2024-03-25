@@ -8,8 +8,8 @@ export const Events = () => {
     <div className="flex h-auto w-full flex-col gap-6">
       <h2 className="mb-4 text-navy-700 text-2xl font-bold dark:text-white">Upcoming Events</h2>
       <div className="flex flex-col gap-4">
-        {events.map(props => (
-          <Link key={props.id} to={`/events/${props.id}`}>
+        {events.map((props, i) => (
+          <Link key={props.id} to={`/events/${i}`}>
             <EventCard key={props.name} {...props} />
           </Link>
         ))}
