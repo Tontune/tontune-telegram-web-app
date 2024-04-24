@@ -25,7 +25,7 @@ const Navbar = () => {
 
           <div>
             <Label className="font-normal text-base">
-              🪙&nbsp;Tune Coins: <span className="font-bold">{tuneBalance}</span>
+              💎&nbsp;Tunes: <span className="font-bold">{tuneBalance}</span>
             </Label>
           </div>
         </>

@@ -67,7 +67,7 @@ export function MyTune() {
               style={{ boxShadow: '0px 2px 10px 0px rgba(168, 85, 247, 1), 0px -2px 10px 0px rgba(14, 165, 233, 0.7)' }}
             >
               <span className="font-bold text-xl">{tuneBalance.toFixed(0)}</span>
-              <span className="text-gray-400">Heart tokens</span>
+              <span className="text-gray-400">Tune Coins</span>
             </Card>
             <Card
               extra="items-center text-center justify-center flex-col w-[96px] min-w-[96px] h-[96px] p-1 bg-cover cursor-pointer shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:shadow-none"
