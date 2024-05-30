@@ -18,6 +18,7 @@ const queryClient = new QueryClient({
 });
 
 WebApp.ready();
+WebApp.expand();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <TonConnectUIProvider
