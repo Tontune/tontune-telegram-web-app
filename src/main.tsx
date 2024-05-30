@@ -9,9 +9,7 @@ import App from './App.tsx';
 
 console.log(`App: Tontune TMA | Version: ${pkg.version}`);
 
-// this manifest is used temporarily for development purposes
-const manifestUrl =
-  'https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json';
+const manifestUrl = 'https://raw.githubusercontent.com/Tontune/tontune-telegram-web-app/master/manifest.json';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnWindowFocus: false } },
